@@ -1,0 +1,78 @@
+grammar org.xtext.example.dawn.Dawn with org.eclipse.xtext.common.Terminals
+
+generate dawn "http://www.xtext.org/example/dawn/Dawn"
+
+Model:
+	window+=Window*
+	components+=Component*
+	;
+	
+Window:
+	'create' 'new' 'window' name=ID 'with' 'attributes' '(' attributes=WindowAttributes ')' 'containing' container=Container
+;
+
+/*insert all possible Java-Swing controls here:
+ * we just implemented the for our scenario necessary control elements*/
+Component:
+	Button | TextField | SingleChoice | TextLabel | PasswordField 
+;
+
+WindowAttributes:
+	(text=TextAttribute ',')? size=SizeAttribute
+;
+
+TextAttribute:
+	'name' text=STRING
+;
+
+SizeAttribute:
+	'having''size''[' height=INT ',' width=INT ']'
+;
+
+Container:
+	':' '|' elements+=Element+ '|'
+;
+
+Element:
+	component=Component position=PositionAttribute (size=SizeAttribute)? '|'
+;
+
+PositionAttribute:
+	'at''position''[' x+=INT+ ',' y+=INT+ ']'
+;
+
+Button:
+	'new' 'button' '=' name=ID 'attributes''('attributes=ButtonAttributes')'
+;
+
+ButtonAttributes:
+	text=TextAttribute ',' method=Call
+;
+
+Call returns Window:
+	'function:' name = ID
+;
+
+TextField:
+	'new' 'text-field' '=' name=ID 'attributes''('text=TextAttribute')'
+;
+
+TextLabel:
+	'new' 'text-label' '=' name=ID 'attributes''('text=TextAttribute')'
+;
+
+PasswordField:
+	'new' 'password-field' '=' name=ID 'attributes''('text=TextAttribute')'
+;
+
+SingleChoice:
+	'new' 'choice''=' name=ID 'attributes''('attributes=SingleChoiceAttributes')'
+;
+
+SingleChoiceAttributes:
+	text=TextAttribute (',''options'components+=SingleChoiceOptions)+
+;
+
+SingleChoiceOptions:
+	'()' name=ID 'labels' text=TextAttribute
+;
