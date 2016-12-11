@@ -7,11 +7,18 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.xtext.example.dawn.dawn.Button
 import org.xtext.example.dawn.dawn.Element
 import org.xtext.example.dawn.dawn.Window
-import org.xtext.example.dawn.dawn.Button
-import org.xtext.example.dawn.dawn.Container
-import org.xtext.example.dawn.dawn.DawnPackage
+import org.xtext.example.dawn.dawn.TextLabel
+import org.xtext.example.dawn.dawn.TextField
+import org.xtext.example.dawn.helpers.HelperClassButton
+import org.xtext.example.dawn.helpers.HelperClassTextLabel
+import org.xtext.example.dawn.helpers.HelperClassTextField
+import org.xtext.example.dawn.dawn.PasswordField
+import org.xtext.example.dawn.helpers.HelperClassPasswordField
+import org.xtext.example.dawn.dawn.SingleChoice
+import org.xtext.example.dawn.helpers.HelperClassSingleChoice
 
 /**
  * Generates code from your model files on save.
@@ -32,23 +39,44 @@ class DawnGenerator extends AbstractGenerator {
 		    	public static void main(String[] args){
 					JFrame «w.name» = new JFrame("«if(w.attributes.text != ""){w.attributes.text}»");
 					JPanel panel = new JPanel();
-					«FOR e:w.container.elements»
-					        «e.compile»
+					«FOR e : w.container.elements»
+						«e.compile»
 					«ENDFOR»
-						
 					«w.name».add(panel); 
 					«w.name».pack();
 					«w.name».setSize(«w.attributes.size.height»,«w.attributes.size.width»);
 					«w.name».setVisible(true);
 					}
 				}
-			'''
-	
-	def compile(Element e) '''
-	«IF(e instanceof Button)»
-		JButton «e.component.name» = new JButton("");
-		panel.add(button);
-	«ENDIF»
-	'''
+		'''
 
+	def compile(Element e) '''
+		«IF (e.component instanceof Button)»	
+			JButton «e.component.name» = new JButton("«HelperClassButton.getButtonText(e.component)»");
+			panel.add(«e.component.name»);
+		«ENDIF»
+		«IF (e.component instanceof TextLabel)»	
+			JLabel «e.component.name» = new JLabel("«HelperClassTextLabel.getTextLabelText(e.component)»");
+			panel.add(«e.component.name»);
+		«ENDIF»
+		«IF (e.component instanceof TextField)»	
+			JTextField «e.component.name» = new JTextField("«HelperClassTextField.getTextFieldText(e.component)»");
+			panel.add(«e.component.name»);
+		«ENDIF»
+		«IF (e.component instanceof PasswordField)»	
+			JPasswordField «e.component.name» = new JPasswordField("«HelperClassPasswordField.getPasswordFieldText(e.component)»");
+			panel.add(«e.component.name»);
+		«ENDIF»
+		«IF (e.component instanceof SingleChoice)»
+			ButtonGroup bg_«e.component.name»=new ButtonGroup();
+			«FOR r : HelperClassSingleChoice.getSingleChoiceAttributeComponentsAttributes(e.component).entrySet()»
+				JRadioButton rb_«r.key»=new JRadioButton("«r.value»");
+				bg_«e.component.name».add(rb_«r.key»);
+				panel.add(rb_«r.key»);
+			«ENDFOR»
+		«ENDIF»
+		
+	'''
+	
+	
 }

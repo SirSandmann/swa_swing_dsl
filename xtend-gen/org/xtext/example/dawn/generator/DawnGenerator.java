@@ -5,6 +5,8 @@ package org.xtext.example.dawn.generator;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import java.util.Map;
+import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -18,10 +20,19 @@ import org.xtext.example.dawn.dawn.Button;
 import org.xtext.example.dawn.dawn.Component;
 import org.xtext.example.dawn.dawn.Container;
 import org.xtext.example.dawn.dawn.Element;
+import org.xtext.example.dawn.dawn.PasswordField;
+import org.xtext.example.dawn.dawn.SingleChoice;
 import org.xtext.example.dawn.dawn.SizeAttribute;
 import org.xtext.example.dawn.dawn.TextAttribute;
+import org.xtext.example.dawn.dawn.TextField;
+import org.xtext.example.dawn.dawn.TextLabel;
 import org.xtext.example.dawn.dawn.Window;
 import org.xtext.example.dawn.dawn.WindowAttributes;
+import org.xtext.example.dawn.helpers.HelperClassButton;
+import org.xtext.example.dawn.helpers.HelperClassPasswordField;
+import org.xtext.example.dawn.helpers.HelperClassSingleChoice;
+import org.xtext.example.dawn.helpers.HelperClassTextField;
+import org.xtext.example.dawn.helpers.HelperClassTextLabel;
 
 /**
  * Generates code from your model files on save.
@@ -86,8 +97,6 @@ public class DawnGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("\t\t\t\t");
-    _builder.newLine();
     _builder.append("\t\t\t");
     String _name_2 = w.getName();
     _builder.append(_name_2, "\t\t\t");
@@ -130,17 +139,130 @@ public class DawnGenerator extends AbstractGenerator {
   public CharSequence compile(final Element e) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      if ((e instanceof Button)) {
+      Component _component = e.getComponent();
+      if ((_component instanceof Button)) {
         _builder.append("JButton ");
-        Component _component = e.getComponent();
-        String _name = _component.getName();
+        Component _component_1 = e.getComponent();
+        String _name = _component_1.getName();
         _builder.append(_name, "");
-        _builder.append(" = new JButton(\"\");");
+        _builder.append(" = new JButton(\"");
+        Component _component_2 = e.getComponent();
+        String _buttonText = HelperClassButton.getButtonText(_component_2);
+        _builder.append(_buttonText, "");
+        _builder.append("\");");
         _builder.newLineIfNotEmpty();
-        _builder.append("panel.add(button);");
-        _builder.newLine();
+        _builder.append("panel.add(");
+        Component _component_3 = e.getComponent();
+        String _name_1 = _component_3.getName();
+        _builder.append(_name_1, "");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
       }
     }
+    {
+      Component _component_4 = e.getComponent();
+      if ((_component_4 instanceof TextLabel)) {
+        _builder.append("JLabel ");
+        Component _component_5 = e.getComponent();
+        String _name_2 = _component_5.getName();
+        _builder.append(_name_2, "");
+        _builder.append(" = new JLabel(\"");
+        Component _component_6 = e.getComponent();
+        String _textLabelText = HelperClassTextLabel.getTextLabelText(_component_6);
+        _builder.append(_textLabelText, "");
+        _builder.append("\");");
+        _builder.newLineIfNotEmpty();
+        _builder.append("panel.add(");
+        Component _component_7 = e.getComponent();
+        String _name_3 = _component_7.getName();
+        _builder.append(_name_3, "");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      Component _component_8 = e.getComponent();
+      if ((_component_8 instanceof TextField)) {
+        _builder.append("JTextField ");
+        Component _component_9 = e.getComponent();
+        String _name_4 = _component_9.getName();
+        _builder.append(_name_4, "");
+        _builder.append(" = new JTextField(\"");
+        Component _component_10 = e.getComponent();
+        String _textFieldText = HelperClassTextField.getTextFieldText(_component_10);
+        _builder.append(_textFieldText, "");
+        _builder.append("\");");
+        _builder.newLineIfNotEmpty();
+        _builder.append("panel.add(");
+        Component _component_11 = e.getComponent();
+        String _name_5 = _component_11.getName();
+        _builder.append(_name_5, "");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      Component _component_12 = e.getComponent();
+      if ((_component_12 instanceof PasswordField)) {
+        _builder.append("JPasswordField ");
+        Component _component_13 = e.getComponent();
+        String _name_6 = _component_13.getName();
+        _builder.append(_name_6, "");
+        _builder.append(" = new JPasswordField(\"");
+        Component _component_14 = e.getComponent();
+        String _passwordFieldText = HelperClassPasswordField.getPasswordFieldText(_component_14);
+        _builder.append(_passwordFieldText, "");
+        _builder.append("\");");
+        _builder.newLineIfNotEmpty();
+        _builder.append("panel.add(");
+        Component _component_15 = e.getComponent();
+        String _name_7 = _component_15.getName();
+        _builder.append(_name_7, "");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      Component _component_16 = e.getComponent();
+      if ((_component_16 instanceof SingleChoice)) {
+        _builder.append("ButtonGroup bg_");
+        Component _component_17 = e.getComponent();
+        String _name_8 = _component_17.getName();
+        _builder.append(_name_8, "");
+        _builder.append("=new ButtonGroup();");
+        _builder.newLineIfNotEmpty();
+        {
+          Component _component_18 = e.getComponent();
+          Map<String, String> _singleChoiceAttributeComponentsAttributes = HelperClassSingleChoice.getSingleChoiceAttributeComponentsAttributes(_component_18);
+          Set<Map.Entry<String, String>> _entrySet = _singleChoiceAttributeComponentsAttributes.entrySet();
+          for(final Map.Entry<String, String> r : _entrySet) {
+            _builder.append("JRadioButton rb_");
+            String _key = r.getKey();
+            _builder.append(_key, "");
+            _builder.append("=new JRadioButton(\"");
+            String _value = r.getValue();
+            _builder.append(_value, "");
+            _builder.append("\");");
+            _builder.newLineIfNotEmpty();
+            _builder.append("bg_");
+            Component _component_19 = e.getComponent();
+            String _name_9 = _component_19.getName();
+            _builder.append(_name_9, "");
+            _builder.append(".add(rb_");
+            String _key_1 = r.getKey();
+            _builder.append(_key_1, "");
+            _builder.append(");");
+            _builder.newLineIfNotEmpty();
+            _builder.append("panel.add(rb_");
+            String _key_2 = r.getKey();
+            _builder.append(_key_2, "");
+            _builder.append(");");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    _builder.newLine();
     return _builder;
   }
 }
