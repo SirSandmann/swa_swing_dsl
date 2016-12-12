@@ -60,6 +60,15 @@ public interface DawnFactory extends EFactory
   WindowAttributes createWindowAttributes();
 
   /**
+   * Returns a new object of class '<em>Gap Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Gap Attribute</em>'.
+   * @generated
+   */
+  GapAttribute createGapAttribute();
+
+  /**
    * Returns a new object of class '<em>Text Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

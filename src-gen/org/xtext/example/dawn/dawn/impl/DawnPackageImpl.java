@@ -16,6 +16,7 @@ import org.xtext.example.dawn.dawn.Component;
 import org.xtext.example.dawn.dawn.DawnFactory;
 import org.xtext.example.dawn.dawn.DawnPackage;
 import org.xtext.example.dawn.dawn.Element;
+import org.xtext.example.dawn.dawn.GapAttribute;
 import org.xtext.example.dawn.dawn.Model;
 import org.xtext.example.dawn.dawn.PasswordField;
 import org.xtext.example.dawn.dawn.PositionAttribute;
@@ -64,6 +65,13 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
    * @generated
    */
   private EClass windowAttributesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass gapAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -324,9 +332,19 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getWindowAttributes_Layout()
+  {
+    return (EAttribute)windowAttributesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getWindowAttributes_Text()
   {
-    return (EReference)windowAttributesEClass.getEStructuralFeatures().get(0);
+    return (EReference)windowAttributesEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -336,7 +354,37 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
    */
   public EReference getWindowAttributes_Size()
   {
-    return (EReference)windowAttributesEClass.getEStructuralFeatures().get(1);
+    return (EReference)windowAttributesEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGapAttribute()
+  {
+    return gapAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGapAttribute_GapWidth()
+  {
+    return (EAttribute)gapAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGapAttribute_GapHeight()
+  {
+    return (EAttribute)gapAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -464,19 +512,9 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPositionAttribute_X()
+  public EAttribute getPositionAttribute_PositionEnum()
   {
     return (EAttribute)positionAttributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getPositionAttribute_Y()
-  {
-    return (EAttribute)positionAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -712,8 +750,13 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
     createEAttribute(componentEClass, COMPONENT__NAME);
 
     windowAttributesEClass = createEClass(WINDOW_ATTRIBUTES);
+    createEAttribute(windowAttributesEClass, WINDOW_ATTRIBUTES__LAYOUT);
     createEReference(windowAttributesEClass, WINDOW_ATTRIBUTES__TEXT);
     createEReference(windowAttributesEClass, WINDOW_ATTRIBUTES__SIZE);
+
+    gapAttributeEClass = createEClass(GAP_ATTRIBUTE);
+    createEAttribute(gapAttributeEClass, GAP_ATTRIBUTE__GAP_WIDTH);
+    createEAttribute(gapAttributeEClass, GAP_ATTRIBUTE__GAP_HEIGHT);
 
     textAttributeEClass = createEClass(TEXT_ATTRIBUTE);
     createEAttribute(textAttributeEClass, TEXT_ATTRIBUTE__TEXT);
@@ -731,8 +774,7 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
     createEReference(elementEClass, ELEMENT__SIZE);
 
     positionAttributeEClass = createEClass(POSITION_ATTRIBUTE);
-    createEAttribute(positionAttributeEClass, POSITION_ATTRIBUTE__X);
-    createEAttribute(positionAttributeEClass, POSITION_ATTRIBUTE__Y);
+    createEAttribute(positionAttributeEClass, POSITION_ATTRIBUTE__POSITION_ENUM);
 
     buttonEClass = createEClass(BUTTON);
     createEReference(buttonEClass, BUTTON__ATTRIBUTES);
@@ -811,8 +853,13 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
     initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(windowAttributesEClass, WindowAttributes.class, "WindowAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWindowAttributes_Layout(), ecorePackage.getEString(), "layout", null, 0, 1, WindowAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWindowAttributes_Text(), this.getTextAttribute(), null, "text", null, 0, 1, WindowAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWindowAttributes_Size(), this.getSizeAttribute(), null, "size", null, 0, 1, WindowAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(gapAttributeEClass, GapAttribute.class, "GapAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGapAttribute_GapWidth(), ecorePackage.getEInt(), "gapWidth", null, 0, 1, GapAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGapAttribute_GapHeight(), ecorePackage.getEInt(), "gapHeight", null, 0, 1, GapAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(textAttributeEClass, TextAttribute.class, "TextAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTextAttribute_Text(), ecorePackage.getEString(), "text", null, 0, 1, TextAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -830,8 +877,7 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
     initEReference(getElement_Size(), this.getSizeAttribute(), null, "size", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(positionAttributeEClass, PositionAttribute.class, "PositionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPositionAttribute_X(), ecorePackage.getEInt(), "x", null, 0, -1, PositionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPositionAttribute_Y(), ecorePackage.getEInt(), "y", null, 0, -1, PositionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPositionAttribute_PositionEnum(), ecorePackage.getEString(), "positionEnum", null, 0, 1, PositionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getButton_Attributes(), this.getButtonAttributes(), null, "attributes", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

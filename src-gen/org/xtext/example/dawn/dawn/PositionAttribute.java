@@ -3,8 +3,6 @@
  */
 package org.xtext.example.dawn.dawn;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.dawn.dawn.PositionAttribute#getX <em>X</em>}</li>
- *   <li>{@link org.xtext.example.dawn.dawn.PositionAttribute#getY <em>Y</em>}</li>
+ *   <li>{@link org.xtext.example.dawn.dawn.PositionAttribute#getPositionEnum <em>Position Enum</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.dawn.dawn.DawnPackage#getPositionAttribute()
@@ -27,35 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface PositionAttribute extends EObject
 {
   /**
-   * Returns the value of the '<em><b>X</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Integer}.
+   * Returns the value of the '<em><b>Position Enum</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>X</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Position Enum</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>X</em>' attribute list.
-   * @see org.xtext.example.dawn.dawn.DawnPackage#getPositionAttribute_X()
-   * @model unique="false"
+   * @return the value of the '<em>Position Enum</em>' attribute.
+   * @see #setPositionEnum(String)
+   * @see org.xtext.example.dawn.dawn.DawnPackage#getPositionAttribute_PositionEnum()
+   * @model
    * @generated
    */
-  EList<Integer> getX();
+  String getPositionEnum();
 
   /**
-   * Returns the value of the '<em><b>Y</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Integer}.
+   * Sets the value of the '{@link org.xtext.example.dawn.dawn.PositionAttribute#getPositionEnum <em>Position Enum</em>}' attribute.
    * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Y</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Y</em>' attribute list.
-   * @see org.xtext.example.dawn.dawn.DawnPackage#getPositionAttribute_Y()
-   * @model unique="false"
+   * @param value the new value of the '<em>Position Enum</em>' attribute.
+   * @see #getPositionEnum()
    * @generated
    */
-  EList<Integer> getY();
+  void setPositionEnum(String value);
 
 } // PositionAttribute

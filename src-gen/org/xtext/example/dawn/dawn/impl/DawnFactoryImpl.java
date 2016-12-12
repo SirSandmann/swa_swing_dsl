@@ -69,6 +69,7 @@ public class DawnFactoryImpl extends EFactoryImpl implements DawnFactory
       case DawnPackage.WINDOW: return createWindow();
       case DawnPackage.COMPONENT: return createComponent();
       case DawnPackage.WINDOW_ATTRIBUTES: return createWindowAttributes();
+      case DawnPackage.GAP_ATTRIBUTE: return createGapAttribute();
       case DawnPackage.TEXT_ATTRIBUTE: return createTextAttribute();
       case DawnPackage.SIZE_ATTRIBUTE: return createSizeAttribute();
       case DawnPackage.CONTAINER: return createContainer();
@@ -129,6 +130,17 @@ public class DawnFactoryImpl extends EFactoryImpl implements DawnFactory
   {
     WindowAttributesImpl windowAttributes = new WindowAttributesImpl();
     return windowAttributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GapAttribute createGapAttribute()
+  {
+    GapAttributeImpl gapAttribute = new GapAttributeImpl();
+    return gapAttribute;
   }
 
   /**

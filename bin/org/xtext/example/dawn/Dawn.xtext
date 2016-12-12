@@ -18,7 +18,15 @@ Component:
 ;
 
 WindowAttributes:
-	(text=TextAttribute ',')? size=SizeAttribute
+	(layout=LayoutAttribute ',')? (text=TextAttribute ',')? size=SizeAttribute 
+;
+
+LayoutAttribute:
+	'BorderLayout' | 'BoxLayout' | 'CardLayout' | 'FlowLayout' | 'GridBagLayout' | 'GridLayout' | 'GroupLayout' | 'SpringLayout'
+;
+
+GapAttribute:
+	'with' 'gaps' '[' gapWidth=INT ',' gapHeight=INT ']'
 ;
 
 TextAttribute:
@@ -37,8 +45,12 @@ Element:
 	component=Component position=PositionAttribute (size=SizeAttribute)? '|'
 ;
 
+PositionEnum:
+	'PAGE_START' | 'PAGE_END' | 'LINE_START' | 'LINE_END' | 'CENTER'
+;
+
 PositionAttribute:
-	'at''position''[' x+=INT+ ',' y+=INT+ ']'
+	'at''position''['positionEnum=PositionEnum ']'
 ;
 
 Button:

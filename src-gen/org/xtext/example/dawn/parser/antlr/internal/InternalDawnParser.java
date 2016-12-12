@@ -21,32 +21,20 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDawnParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'create'", "'new'", "'window'", "'with'", "'attributes'", "'('", "')'", "'containing'", "','", "'name'", "'having'", "'size'", "'['", "']'", "':'", "'|'", "'at'", "'position'", "'button'", "'='", "'function:'", "'text-field'", "'text-label'", "'password-field'", "'choice'", "'options'", "'()'", "'labels'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'create'", "'new'", "'window'", "'with'", "'attributes'", "'('", "')'", "'containing'", "','", "'BorderLayout'", "'BoxLayout'", "'CardLayout'", "'FlowLayout'", "'GridBagLayout'", "'GridLayout'", "'GroupLayout'", "'SpringLayout'", "'name'", "'having'", "'size'", "'['", "']'", "':'", "'|'", "'PAGE_START'", "'PAGE_END'", "'LINE_START'", "'LINE_END'", "'CENTER'", "'at'", "'position'", "'button'", "'='", "'function:'", "'text-field'", "'text-label'", "'password-field'", "'choice'", "'options'", "'()'", "'labels'"
     };
-    public static final int RULE_STRING=5;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int T__50=50;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__51=51;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -59,6 +47,31 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
+    public static final int RULE_STRING=5;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -547,29 +560,29 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             if ( (LA3_0==12) ) {
                 switch ( input.LA(2) ) {
-                case 34:
+                case 42:
+                    {
+                    alt3=1;
+                    }
+                    break;
+                case 47:
                     {
                     alt3=5;
                     }
                     break;
-                case 32:
+                case 45:
                     {
                     alt3=2;
                     }
                     break;
-                case 33:
+                case 46:
                     {
                     alt3=4;
                     }
                     break;
-                case 35:
+                case 48:
                     {
                     alt3=3;
-                    }
-                    break;
-                case 29:
-                    {
-                    alt3=1;
                     }
                     break;
                 default:
@@ -736,48 +749,51 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWindowAttributes"
-    // InternalDawn.g:298:1: ruleWindowAttributes returns [EObject current=null] : ( ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' )? ( (lv_size_2_0= ruleSizeAttribute ) ) ) ;
+    // InternalDawn.g:298:1: ruleWindowAttributes returns [EObject current=null] : ( ( ( (lv_layout_0_0= ruleLayoutAttribute ) ) otherlv_1= ',' )? ( ( (lv_text_2_0= ruleTextAttribute ) ) otherlv_3= ',' )? ( (lv_size_4_0= ruleSizeAttribute ) ) ) ;
     public final EObject ruleWindowAttributes() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        EObject lv_text_0_0 = null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_layout_0_0 = null;
 
-        EObject lv_size_2_0 = null;
+        EObject lv_text_2_0 = null;
+
+        EObject lv_size_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDawn.g:304:2: ( ( ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' )? ( (lv_size_2_0= ruleSizeAttribute ) ) ) )
-            // InternalDawn.g:305:2: ( ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' )? ( (lv_size_2_0= ruleSizeAttribute ) ) )
+            // InternalDawn.g:304:2: ( ( ( ( (lv_layout_0_0= ruleLayoutAttribute ) ) otherlv_1= ',' )? ( ( (lv_text_2_0= ruleTextAttribute ) ) otherlv_3= ',' )? ( (lv_size_4_0= ruleSizeAttribute ) ) ) )
+            // InternalDawn.g:305:2: ( ( ( (lv_layout_0_0= ruleLayoutAttribute ) ) otherlv_1= ',' )? ( ( (lv_text_2_0= ruleTextAttribute ) ) otherlv_3= ',' )? ( (lv_size_4_0= ruleSizeAttribute ) ) )
             {
-            // InternalDawn.g:305:2: ( ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' )? ( (lv_size_2_0= ruleSizeAttribute ) ) )
-            // InternalDawn.g:306:3: ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' )? ( (lv_size_2_0= ruleSizeAttribute ) )
+            // InternalDawn.g:305:2: ( ( ( (lv_layout_0_0= ruleLayoutAttribute ) ) otherlv_1= ',' )? ( ( (lv_text_2_0= ruleTextAttribute ) ) otherlv_3= ',' )? ( (lv_size_4_0= ruleSizeAttribute ) ) )
+            // InternalDawn.g:306:3: ( ( (lv_layout_0_0= ruleLayoutAttribute ) ) otherlv_1= ',' )? ( ( (lv_text_2_0= ruleTextAttribute ) ) otherlv_3= ',' )? ( (lv_size_4_0= ruleSizeAttribute ) )
             {
-            // InternalDawn.g:306:3: ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' )?
+            // InternalDawn.g:306:3: ( ( (lv_layout_0_0= ruleLayoutAttribute ) ) otherlv_1= ',' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==20) ) {
+            if ( ((LA4_0>=20 && LA4_0<=27)) ) {
                 alt4=1;
             }
             switch (alt4) {
                 case 1 :
-                    // InternalDawn.g:307:4: ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ','
+                    // InternalDawn.g:307:4: ( (lv_layout_0_0= ruleLayoutAttribute ) ) otherlv_1= ','
                     {
-                    // InternalDawn.g:307:4: ( (lv_text_0_0= ruleTextAttribute ) )
-                    // InternalDawn.g:308:5: (lv_text_0_0= ruleTextAttribute )
+                    // InternalDawn.g:307:4: ( (lv_layout_0_0= ruleLayoutAttribute ) )
+                    // InternalDawn.g:308:5: (lv_layout_0_0= ruleLayoutAttribute )
                     {
-                    // InternalDawn.g:308:5: (lv_text_0_0= ruleTextAttribute )
-                    // InternalDawn.g:309:6: lv_text_0_0= ruleTextAttribute
+                    // InternalDawn.g:308:5: (lv_layout_0_0= ruleLayoutAttribute )
+                    // InternalDawn.g:309:6: lv_layout_0_0= ruleLayoutAttribute
                     {
 
-                    						newCompositeNode(grammarAccess.getWindowAttributesAccess().getTextTextAttributeParserRuleCall_0_0_0());
+                    						newCompositeNode(grammarAccess.getWindowAttributesAccess().getLayoutLayoutAttributeParserRuleCall_0_0_0());
                     					
                     pushFollow(FOLLOW_15);
-                    lv_text_0_0=ruleTextAttribute();
+                    lv_layout_0_0=ruleLayoutAttribute();
 
                     state._fsp--;
 
@@ -787,9 +803,9 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
                     						}
                     						set(
                     							current,
-                    							"text",
-                    							lv_text_0_0,
-                    							"org.xtext.example.dawn.Dawn.TextAttribute");
+                    							"layout",
+                    							lv_layout_0_0,
+                    							"org.xtext.example.dawn.Dawn.LayoutAttribute");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -808,17 +824,69 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDawn.g:331:3: ( (lv_size_2_0= ruleSizeAttribute ) )
-            // InternalDawn.g:332:4: (lv_size_2_0= ruleSizeAttribute )
+            // InternalDawn.g:331:3: ( ( (lv_text_2_0= ruleTextAttribute ) ) otherlv_3= ',' )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==28) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // InternalDawn.g:332:4: ( (lv_text_2_0= ruleTextAttribute ) ) otherlv_3= ','
+                    {
+                    // InternalDawn.g:332:4: ( (lv_text_2_0= ruleTextAttribute ) )
+                    // InternalDawn.g:333:5: (lv_text_2_0= ruleTextAttribute )
+                    {
+                    // InternalDawn.g:333:5: (lv_text_2_0= ruleTextAttribute )
+                    // InternalDawn.g:334:6: lv_text_2_0= ruleTextAttribute
+                    {
+
+                    						newCompositeNode(grammarAccess.getWindowAttributesAccess().getTextTextAttributeParserRuleCall_1_0_0());
+                    					
+                    pushFollow(FOLLOW_15);
+                    lv_text_2_0=ruleTextAttribute();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getWindowAttributesRule());
+                    						}
+                    						set(
+                    							current,
+                    							"text",
+                    							lv_text_2_0,
+                    							"org.xtext.example.dawn.Dawn.TextAttribute");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_3=(Token)match(input,19,FOLLOW_11); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getWindowAttributesAccess().getCommaKeyword_1_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalDawn.g:356:3: ( (lv_size_4_0= ruleSizeAttribute ) )
+            // InternalDawn.g:357:4: (lv_size_4_0= ruleSizeAttribute )
             {
-            // InternalDawn.g:332:4: (lv_size_2_0= ruleSizeAttribute )
-            // InternalDawn.g:333:5: lv_size_2_0= ruleSizeAttribute
+            // InternalDawn.g:357:4: (lv_size_4_0= ruleSizeAttribute )
+            // InternalDawn.g:358:5: lv_size_4_0= ruleSizeAttribute
             {
 
-            					newCompositeNode(grammarAccess.getWindowAttributesAccess().getSizeSizeAttributeParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getWindowAttributesAccess().getSizeSizeAttributeParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_2);
-            lv_size_2_0=ruleSizeAttribute();
+            lv_size_4_0=ruleSizeAttribute();
 
             state._fsp--;
 
@@ -829,7 +897,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"size",
-            						lv_size_2_0,
+            						lv_size_4_0,
             						"org.xtext.example.dawn.Dawn.SizeAttribute");
             					afterParserOrEnumRuleCall();
             				
@@ -861,8 +929,219 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleWindowAttributes"
 
 
+    // $ANTLR start "entryRuleLayoutAttribute"
+    // InternalDawn.g:379:1: entryRuleLayoutAttribute returns [String current=null] : iv_ruleLayoutAttribute= ruleLayoutAttribute EOF ;
+    public final String entryRuleLayoutAttribute() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleLayoutAttribute = null;
+
+
+        try {
+            // InternalDawn.g:379:55: (iv_ruleLayoutAttribute= ruleLayoutAttribute EOF )
+            // InternalDawn.g:380:2: iv_ruleLayoutAttribute= ruleLayoutAttribute EOF
+            {
+             newCompositeNode(grammarAccess.getLayoutAttributeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleLayoutAttribute=ruleLayoutAttribute();
+
+            state._fsp--;
+
+             current =iv_ruleLayoutAttribute.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLayoutAttribute"
+
+
+    // $ANTLR start "ruleLayoutAttribute"
+    // InternalDawn.g:386:1: ruleLayoutAttribute returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'BorderLayout' | kw= 'BoxLayout' | kw= 'CardLayout' | kw= 'FlowLayout' | kw= 'GridBagLayout' | kw= 'GridLayout' | kw= 'GroupLayout' | kw= 'SpringLayout' ) ;
+    public final AntlrDatatypeRuleToken ruleLayoutAttribute() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalDawn.g:392:2: ( (kw= 'BorderLayout' | kw= 'BoxLayout' | kw= 'CardLayout' | kw= 'FlowLayout' | kw= 'GridBagLayout' | kw= 'GridLayout' | kw= 'GroupLayout' | kw= 'SpringLayout' ) )
+            // InternalDawn.g:393:2: (kw= 'BorderLayout' | kw= 'BoxLayout' | kw= 'CardLayout' | kw= 'FlowLayout' | kw= 'GridBagLayout' | kw= 'GridLayout' | kw= 'GroupLayout' | kw= 'SpringLayout' )
+            {
+            // InternalDawn.g:393:2: (kw= 'BorderLayout' | kw= 'BoxLayout' | kw= 'CardLayout' | kw= 'FlowLayout' | kw= 'GridBagLayout' | kw= 'GridLayout' | kw= 'GroupLayout' | kw= 'SpringLayout' )
+            int alt6=8;
+            switch ( input.LA(1) ) {
+            case 20:
+                {
+                alt6=1;
+                }
+                break;
+            case 21:
+                {
+                alt6=2;
+                }
+                break;
+            case 22:
+                {
+                alt6=3;
+                }
+                break;
+            case 23:
+                {
+                alt6=4;
+                }
+                break;
+            case 24:
+                {
+                alt6=5;
+                }
+                break;
+            case 25:
+                {
+                alt6=6;
+                }
+                break;
+            case 26:
+                {
+                alt6=7;
+                }
+                break;
+            case 27:
+                {
+                alt6=8;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt6) {
+                case 1 :
+                    // InternalDawn.g:394:3: kw= 'BorderLayout'
+                    {
+                    kw=(Token)match(input,20,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getBorderLayoutKeyword_0());
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalDawn.g:400:3: kw= 'BoxLayout'
+                    {
+                    kw=(Token)match(input,21,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getBoxLayoutKeyword_1());
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalDawn.g:406:3: kw= 'CardLayout'
+                    {
+                    kw=(Token)match(input,22,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getCardLayoutKeyword_2());
+                    		
+
+                    }
+                    break;
+                case 4 :
+                    // InternalDawn.g:412:3: kw= 'FlowLayout'
+                    {
+                    kw=(Token)match(input,23,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getFlowLayoutKeyword_3());
+                    		
+
+                    }
+                    break;
+                case 5 :
+                    // InternalDawn.g:418:3: kw= 'GridBagLayout'
+                    {
+                    kw=(Token)match(input,24,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getGridBagLayoutKeyword_4());
+                    		
+
+                    }
+                    break;
+                case 6 :
+                    // InternalDawn.g:424:3: kw= 'GridLayout'
+                    {
+                    kw=(Token)match(input,25,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getGridLayoutKeyword_5());
+                    		
+
+                    }
+                    break;
+                case 7 :
+                    // InternalDawn.g:430:3: kw= 'GroupLayout'
+                    {
+                    kw=(Token)match(input,26,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getGroupLayoutKeyword_6());
+                    		
+
+                    }
+                    break;
+                case 8 :
+                    // InternalDawn.g:436:3: kw= 'SpringLayout'
+                    {
+                    kw=(Token)match(input,27,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getSpringLayoutKeyword_7());
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLayoutAttribute"
+
+
     // $ANTLR start "entryRuleTextAttribute"
-    // InternalDawn.g:354:1: entryRuleTextAttribute returns [EObject current=null] : iv_ruleTextAttribute= ruleTextAttribute EOF ;
+    // InternalDawn.g:445:1: entryRuleTextAttribute returns [EObject current=null] : iv_ruleTextAttribute= ruleTextAttribute EOF ;
     public final EObject entryRuleTextAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -870,8 +1149,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:354:54: (iv_ruleTextAttribute= ruleTextAttribute EOF )
-            // InternalDawn.g:355:2: iv_ruleTextAttribute= ruleTextAttribute EOF
+            // InternalDawn.g:445:54: (iv_ruleTextAttribute= ruleTextAttribute EOF )
+            // InternalDawn.g:446:2: iv_ruleTextAttribute= ruleTextAttribute EOF
             {
              newCompositeNode(grammarAccess.getTextAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -898,7 +1177,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextAttribute"
-    // InternalDawn.g:361:1: ruleTextAttribute returns [EObject current=null] : (otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) ) ) ;
+    // InternalDawn.g:452:1: ruleTextAttribute returns [EObject current=null] : (otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleTextAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -909,21 +1188,21 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:367:2: ( (otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) ) ) )
-            // InternalDawn.g:368:2: (otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) ) )
+            // InternalDawn.g:458:2: ( (otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) ) ) )
+            // InternalDawn.g:459:2: (otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) ) )
             {
-            // InternalDawn.g:368:2: (otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) ) )
-            // InternalDawn.g:369:3: otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) )
+            // InternalDawn.g:459:2: (otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) ) )
+            // InternalDawn.g:460:3: otherlv_0= 'name' ( (lv_text_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_16); 
+            otherlv_0=(Token)match(input,28,FOLLOW_16); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTextAttributeAccess().getNameKeyword_0());
             		
-            // InternalDawn.g:373:3: ( (lv_text_1_0= RULE_STRING ) )
-            // InternalDawn.g:374:4: (lv_text_1_0= RULE_STRING )
+            // InternalDawn.g:464:3: ( (lv_text_1_0= RULE_STRING ) )
+            // InternalDawn.g:465:4: (lv_text_1_0= RULE_STRING )
             {
-            // InternalDawn.g:374:4: (lv_text_1_0= RULE_STRING )
-            // InternalDawn.g:375:5: lv_text_1_0= RULE_STRING
+            // InternalDawn.g:465:4: (lv_text_1_0= RULE_STRING )
+            // InternalDawn.g:466:5: lv_text_1_0= RULE_STRING
             {
             lv_text_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -968,7 +1247,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSizeAttribute"
-    // InternalDawn.g:395:1: entryRuleSizeAttribute returns [EObject current=null] : iv_ruleSizeAttribute= ruleSizeAttribute EOF ;
+    // InternalDawn.g:486:1: entryRuleSizeAttribute returns [EObject current=null] : iv_ruleSizeAttribute= ruleSizeAttribute EOF ;
     public final EObject entryRuleSizeAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -976,8 +1255,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:395:54: (iv_ruleSizeAttribute= ruleSizeAttribute EOF )
-            // InternalDawn.g:396:2: iv_ruleSizeAttribute= ruleSizeAttribute EOF
+            // InternalDawn.g:486:54: (iv_ruleSizeAttribute= ruleSizeAttribute EOF )
+            // InternalDawn.g:487:2: iv_ruleSizeAttribute= ruleSizeAttribute EOF
             {
              newCompositeNode(grammarAccess.getSizeAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -1004,7 +1283,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSizeAttribute"
-    // InternalDawn.g:402:1: ruleSizeAttribute returns [EObject current=null] : (otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']' ) ;
+    // InternalDawn.g:493:1: ruleSizeAttribute returns [EObject current=null] : (otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']' ) ;
     public final EObject ruleSizeAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1020,29 +1299,29 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:408:2: ( (otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']' ) )
-            // InternalDawn.g:409:2: (otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']' )
+            // InternalDawn.g:499:2: ( (otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']' ) )
+            // InternalDawn.g:500:2: (otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']' )
             {
-            // InternalDawn.g:409:2: (otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']' )
-            // InternalDawn.g:410:3: otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']'
+            // InternalDawn.g:500:2: (otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']' )
+            // InternalDawn.g:501:3: otherlv_0= 'having' otherlv_1= 'size' otherlv_2= '[' ( (lv_height_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_width_5_0= RULE_INT ) ) otherlv_6= ']'
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_17); 
+            otherlv_0=(Token)match(input,29,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSizeAttributeAccess().getHavingKeyword_0());
             		
-            otherlv_1=(Token)match(input,22,FOLLOW_18); 
+            otherlv_1=(Token)match(input,30,FOLLOW_18); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSizeAttributeAccess().getSizeKeyword_1());
             		
-            otherlv_2=(Token)match(input,23,FOLLOW_19); 
+            otherlv_2=(Token)match(input,31,FOLLOW_19); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSizeAttributeAccess().getLeftSquareBracketKeyword_2());
             		
-            // InternalDawn.g:422:3: ( (lv_height_3_0= RULE_INT ) )
-            // InternalDawn.g:423:4: (lv_height_3_0= RULE_INT )
+            // InternalDawn.g:513:3: ( (lv_height_3_0= RULE_INT ) )
+            // InternalDawn.g:514:4: (lv_height_3_0= RULE_INT )
             {
-            // InternalDawn.g:423:4: (lv_height_3_0= RULE_INT )
-            // InternalDawn.g:424:5: lv_height_3_0= RULE_INT
+            // InternalDawn.g:514:4: (lv_height_3_0= RULE_INT )
+            // InternalDawn.g:515:5: lv_height_3_0= RULE_INT
             {
             lv_height_3_0=(Token)match(input,RULE_INT,FOLLOW_15); 
 
@@ -1068,11 +1347,11 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getSizeAttributeAccess().getCommaKeyword_4());
             		
-            // InternalDawn.g:444:3: ( (lv_width_5_0= RULE_INT ) )
-            // InternalDawn.g:445:4: (lv_width_5_0= RULE_INT )
+            // InternalDawn.g:535:3: ( (lv_width_5_0= RULE_INT ) )
+            // InternalDawn.g:536:4: (lv_width_5_0= RULE_INT )
             {
-            // InternalDawn.g:445:4: (lv_width_5_0= RULE_INT )
-            // InternalDawn.g:446:5: lv_width_5_0= RULE_INT
+            // InternalDawn.g:536:4: (lv_width_5_0= RULE_INT )
+            // InternalDawn.g:537:5: lv_width_5_0= RULE_INT
             {
             lv_width_5_0=(Token)match(input,RULE_INT,FOLLOW_20); 
 
@@ -1094,7 +1373,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,24,FOLLOW_2); 
+            otherlv_6=(Token)match(input,32,FOLLOW_2); 
 
             			newLeafNode(otherlv_6, grammarAccess.getSizeAttributeAccess().getRightSquareBracketKeyword_6());
             		
@@ -1121,7 +1400,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleContainer"
-    // InternalDawn.g:470:1: entryRuleContainer returns [EObject current=null] : iv_ruleContainer= ruleContainer EOF ;
+    // InternalDawn.g:561:1: entryRuleContainer returns [EObject current=null] : iv_ruleContainer= ruleContainer EOF ;
     public final EObject entryRuleContainer() throws RecognitionException {
         EObject current = null;
 
@@ -1129,8 +1408,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:470:50: (iv_ruleContainer= ruleContainer EOF )
-            // InternalDawn.g:471:2: iv_ruleContainer= ruleContainer EOF
+            // InternalDawn.g:561:50: (iv_ruleContainer= ruleContainer EOF )
+            // InternalDawn.g:562:2: iv_ruleContainer= ruleContainer EOF
             {
              newCompositeNode(grammarAccess.getContainerRule()); 
             pushFollow(FOLLOW_1);
@@ -1157,7 +1436,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContainer"
-    // InternalDawn.g:477:1: ruleContainer returns [EObject current=null] : (otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|' ) ;
+    // InternalDawn.g:568:1: ruleContainer returns [EObject current=null] : (otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|' ) ;
     public final EObject ruleContainer() throws RecognitionException {
         EObject current = null;
 
@@ -1171,38 +1450,38 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:483:2: ( (otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|' ) )
-            // InternalDawn.g:484:2: (otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|' )
+            // InternalDawn.g:574:2: ( (otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|' ) )
+            // InternalDawn.g:575:2: (otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|' )
             {
-            // InternalDawn.g:484:2: (otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|' )
-            // InternalDawn.g:485:3: otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|'
+            // InternalDawn.g:575:2: (otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|' )
+            // InternalDawn.g:576:3: otherlv_0= ':' otherlv_1= '|' ( (lv_elements_2_0= ruleElement ) )+ otherlv_3= '|'
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_21); 
+            otherlv_0=(Token)match(input,33,FOLLOW_21); 
 
             			newLeafNode(otherlv_0, grammarAccess.getContainerAccess().getColonKeyword_0());
             		
-            otherlv_1=(Token)match(input,26,FOLLOW_5); 
+            otherlv_1=(Token)match(input,34,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getContainerAccess().getVerticalLineKeyword_1());
             		
-            // InternalDawn.g:493:3: ( (lv_elements_2_0= ruleElement ) )+
-            int cnt5=0;
-            loop5:
+            // InternalDawn.g:584:3: ( (lv_elements_2_0= ruleElement ) )+
+            int cnt7=0;
+            loop7:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA5_0==12) ) {
-                    alt5=1;
+                if ( (LA7_0==12) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt7) {
             	case 1 :
-            	    // InternalDawn.g:494:4: (lv_elements_2_0= ruleElement )
+            	    // InternalDawn.g:585:4: (lv_elements_2_0= ruleElement )
             	    {
-            	    // InternalDawn.g:494:4: (lv_elements_2_0= ruleElement )
-            	    // InternalDawn.g:495:5: lv_elements_2_0= ruleElement
+            	    // InternalDawn.g:585:4: (lv_elements_2_0= ruleElement )
+            	    // InternalDawn.g:586:5: lv_elements_2_0= ruleElement
             	    {
 
             	    					newCompositeNode(grammarAccess.getContainerAccess().getElementsElementParserRuleCall_2_0());
@@ -1231,15 +1510,15 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt5 >= 1 ) break loop5;
+            	    if ( cnt7 >= 1 ) break loop7;
                         EarlyExitException eee =
-                            new EarlyExitException(5, input);
+                            new EarlyExitException(7, input);
                         throw eee;
                 }
-                cnt5++;
+                cnt7++;
             } while (true);
 
-            otherlv_3=(Token)match(input,26,FOLLOW_2); 
+            otherlv_3=(Token)match(input,34,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getContainerAccess().getVerticalLineKeyword_3());
             		
@@ -1266,7 +1545,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElement"
-    // InternalDawn.g:520:1: entryRuleElement returns [EObject current=null] : iv_ruleElement= ruleElement EOF ;
+    // InternalDawn.g:611:1: entryRuleElement returns [EObject current=null] : iv_ruleElement= ruleElement EOF ;
     public final EObject entryRuleElement() throws RecognitionException {
         EObject current = null;
 
@@ -1274,8 +1553,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:520:48: (iv_ruleElement= ruleElement EOF )
-            // InternalDawn.g:521:2: iv_ruleElement= ruleElement EOF
+            // InternalDawn.g:611:48: (iv_ruleElement= ruleElement EOF )
+            // InternalDawn.g:612:2: iv_ruleElement= ruleElement EOF
             {
              newCompositeNode(grammarAccess.getElementRule()); 
             pushFollow(FOLLOW_1);
@@ -1302,7 +1581,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElement"
-    // InternalDawn.g:527:1: ruleElement returns [EObject current=null] : ( ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|' ) ;
+    // InternalDawn.g:618:1: ruleElement returns [EObject current=null] : ( ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|' ) ;
     public final EObject ruleElement() throws RecognitionException {
         EObject current = null;
 
@@ -1318,17 +1597,17 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:533:2: ( ( ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|' ) )
-            // InternalDawn.g:534:2: ( ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|' )
+            // InternalDawn.g:624:2: ( ( ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|' ) )
+            // InternalDawn.g:625:2: ( ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|' )
             {
-            // InternalDawn.g:534:2: ( ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|' )
-            // InternalDawn.g:535:3: ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|'
+            // InternalDawn.g:625:2: ( ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|' )
+            // InternalDawn.g:626:3: ( (lv_component_0_0= ruleComponent ) ) ( (lv_position_1_0= rulePositionAttribute ) ) ( (lv_size_2_0= ruleSizeAttribute ) )? otherlv_3= '|'
             {
-            // InternalDawn.g:535:3: ( (lv_component_0_0= ruleComponent ) )
-            // InternalDawn.g:536:4: (lv_component_0_0= ruleComponent )
+            // InternalDawn.g:626:3: ( (lv_component_0_0= ruleComponent ) )
+            // InternalDawn.g:627:4: (lv_component_0_0= ruleComponent )
             {
-            // InternalDawn.g:536:4: (lv_component_0_0= ruleComponent )
-            // InternalDawn.g:537:5: lv_component_0_0= ruleComponent
+            // InternalDawn.g:627:4: (lv_component_0_0= ruleComponent )
+            // InternalDawn.g:628:5: lv_component_0_0= ruleComponent
             {
 
             					newCompositeNode(grammarAccess.getElementAccess().getComponentComponentParserRuleCall_0_0());
@@ -1355,11 +1634,11 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDawn.g:554:3: ( (lv_position_1_0= rulePositionAttribute ) )
-            // InternalDawn.g:555:4: (lv_position_1_0= rulePositionAttribute )
+            // InternalDawn.g:645:3: ( (lv_position_1_0= rulePositionAttribute ) )
+            // InternalDawn.g:646:4: (lv_position_1_0= rulePositionAttribute )
             {
-            // InternalDawn.g:555:4: (lv_position_1_0= rulePositionAttribute )
-            // InternalDawn.g:556:5: lv_position_1_0= rulePositionAttribute
+            // InternalDawn.g:646:4: (lv_position_1_0= rulePositionAttribute )
+            // InternalDawn.g:647:5: lv_position_1_0= rulePositionAttribute
             {
 
             					newCompositeNode(grammarAccess.getElementAccess().getPositionPositionAttributeParserRuleCall_1_0());
@@ -1386,19 +1665,19 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDawn.g:573:3: ( (lv_size_2_0= ruleSizeAttribute ) )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalDawn.g:664:3: ( (lv_size_2_0= ruleSizeAttribute ) )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA6_0==21) ) {
-                alt6=1;
+            if ( (LA8_0==29) ) {
+                alt8=1;
             }
-            switch (alt6) {
+            switch (alt8) {
                 case 1 :
-                    // InternalDawn.g:574:4: (lv_size_2_0= ruleSizeAttribute )
+                    // InternalDawn.g:665:4: (lv_size_2_0= ruleSizeAttribute )
                     {
-                    // InternalDawn.g:574:4: (lv_size_2_0= ruleSizeAttribute )
-                    // InternalDawn.g:575:5: lv_size_2_0= ruleSizeAttribute
+                    // InternalDawn.g:665:4: (lv_size_2_0= ruleSizeAttribute )
+                    // InternalDawn.g:666:5: lv_size_2_0= ruleSizeAttribute
                     {
 
                     					newCompositeNode(grammarAccess.getElementAccess().getSizeSizeAttributeParserRuleCall_2_0());
@@ -1428,7 +1707,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,26,FOLLOW_2); 
+            otherlv_3=(Token)match(input,34,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getElementAccess().getVerticalLineKeyword_3());
             		
@@ -1454,8 +1733,171 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleElement"
 
 
+    // $ANTLR start "entryRulePositionEnum"
+    // InternalDawn.g:691:1: entryRulePositionEnum returns [String current=null] : iv_rulePositionEnum= rulePositionEnum EOF ;
+    public final String entryRulePositionEnum() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_rulePositionEnum = null;
+
+
+        try {
+            // InternalDawn.g:691:52: (iv_rulePositionEnum= rulePositionEnum EOF )
+            // InternalDawn.g:692:2: iv_rulePositionEnum= rulePositionEnum EOF
+            {
+             newCompositeNode(grammarAccess.getPositionEnumRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePositionEnum=rulePositionEnum();
+
+            state._fsp--;
+
+             current =iv_rulePositionEnum.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePositionEnum"
+
+
+    // $ANTLR start "rulePositionEnum"
+    // InternalDawn.g:698:1: rulePositionEnum returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'PAGE_START' | kw= 'PAGE_END' | kw= 'LINE_START' | kw= 'LINE_END' | kw= 'CENTER' ) ;
+    public final AntlrDatatypeRuleToken rulePositionEnum() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalDawn.g:704:2: ( (kw= 'PAGE_START' | kw= 'PAGE_END' | kw= 'LINE_START' | kw= 'LINE_END' | kw= 'CENTER' ) )
+            // InternalDawn.g:705:2: (kw= 'PAGE_START' | kw= 'PAGE_END' | kw= 'LINE_START' | kw= 'LINE_END' | kw= 'CENTER' )
+            {
+            // InternalDawn.g:705:2: (kw= 'PAGE_START' | kw= 'PAGE_END' | kw= 'LINE_START' | kw= 'LINE_END' | kw= 'CENTER' )
+            int alt9=5;
+            switch ( input.LA(1) ) {
+            case 35:
+                {
+                alt9=1;
+                }
+                break;
+            case 36:
+                {
+                alt9=2;
+                }
+                break;
+            case 37:
+                {
+                alt9=3;
+                }
+                break;
+            case 38:
+                {
+                alt9=4;
+                }
+                break;
+            case 39:
+                {
+                alt9=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt9) {
+                case 1 :
+                    // InternalDawn.g:706:3: kw= 'PAGE_START'
+                    {
+                    kw=(Token)match(input,35,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getPAGE_STARTKeyword_0());
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalDawn.g:712:3: kw= 'PAGE_END'
+                    {
+                    kw=(Token)match(input,36,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getPAGE_ENDKeyword_1());
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalDawn.g:718:3: kw= 'LINE_START'
+                    {
+                    kw=(Token)match(input,37,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getLINE_STARTKeyword_2());
+                    		
+
+                    }
+                    break;
+                case 4 :
+                    // InternalDawn.g:724:3: kw= 'LINE_END'
+                    {
+                    kw=(Token)match(input,38,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getLINE_ENDKeyword_3());
+                    		
+
+                    }
+                    break;
+                case 5 :
+                    // InternalDawn.g:730:3: kw= 'CENTER'
+                    {
+                    kw=(Token)match(input,39,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getCENTERKeyword_4());
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePositionEnum"
+
+
     // $ANTLR start "entryRulePositionAttribute"
-    // InternalDawn.g:600:1: entryRulePositionAttribute returns [EObject current=null] : iv_rulePositionAttribute= rulePositionAttribute EOF ;
+    // InternalDawn.g:739:1: entryRulePositionAttribute returns [EObject current=null] : iv_rulePositionAttribute= rulePositionAttribute EOF ;
     public final EObject entryRulePositionAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1463,8 +1905,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:600:58: (iv_rulePositionAttribute= rulePositionAttribute EOF )
-            // InternalDawn.g:601:2: iv_rulePositionAttribute= rulePositionAttribute EOF
+            // InternalDawn.g:739:58: (iv_rulePositionAttribute= rulePositionAttribute EOF )
+            // InternalDawn.g:740:2: iv_rulePositionAttribute= rulePositionAttribute EOF
             {
              newCompositeNode(grammarAccess.getPositionAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -1491,145 +1933,73 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePositionAttribute"
-    // InternalDawn.g:607:1: rulePositionAttribute returns [EObject current=null] : (otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_x_3_0= RULE_INT ) )+ otherlv_4= ',' ( (lv_y_5_0= RULE_INT ) )+ otherlv_6= ']' ) ;
+    // InternalDawn.g:746:1: rulePositionAttribute returns [EObject current=null] : (otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_positionEnum_3_0= rulePositionEnum ) ) otherlv_4= ']' ) ;
     public final EObject rulePositionAttribute() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token lv_x_3_0=null;
         Token otherlv_4=null;
-        Token lv_y_5_0=null;
-        Token otherlv_6=null;
+        AntlrDatatypeRuleToken lv_positionEnum_3_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalDawn.g:613:2: ( (otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_x_3_0= RULE_INT ) )+ otherlv_4= ',' ( (lv_y_5_0= RULE_INT ) )+ otherlv_6= ']' ) )
-            // InternalDawn.g:614:2: (otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_x_3_0= RULE_INT ) )+ otherlv_4= ',' ( (lv_y_5_0= RULE_INT ) )+ otherlv_6= ']' )
+            // InternalDawn.g:752:2: ( (otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_positionEnum_3_0= rulePositionEnum ) ) otherlv_4= ']' ) )
+            // InternalDawn.g:753:2: (otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_positionEnum_3_0= rulePositionEnum ) ) otherlv_4= ']' )
             {
-            // InternalDawn.g:614:2: (otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_x_3_0= RULE_INT ) )+ otherlv_4= ',' ( (lv_y_5_0= RULE_INT ) )+ otherlv_6= ']' )
-            // InternalDawn.g:615:3: otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_x_3_0= RULE_INT ) )+ otherlv_4= ',' ( (lv_y_5_0= RULE_INT ) )+ otherlv_6= ']'
+            // InternalDawn.g:753:2: (otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_positionEnum_3_0= rulePositionEnum ) ) otherlv_4= ']' )
+            // InternalDawn.g:754:3: otherlv_0= 'at' otherlv_1= 'position' otherlv_2= '[' ( (lv_positionEnum_3_0= rulePositionEnum ) ) otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_25); 
+            otherlv_0=(Token)match(input,40,FOLLOW_25); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPositionAttributeAccess().getAtKeyword_0());
             		
-            otherlv_1=(Token)match(input,28,FOLLOW_18); 
+            otherlv_1=(Token)match(input,41,FOLLOW_18); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPositionAttributeAccess().getPositionKeyword_1());
             		
-            otherlv_2=(Token)match(input,23,FOLLOW_19); 
+            otherlv_2=(Token)match(input,31,FOLLOW_26); 
 
             			newLeafNode(otherlv_2, grammarAccess.getPositionAttributeAccess().getLeftSquareBracketKeyword_2());
             		
-            // InternalDawn.g:627:3: ( (lv_x_3_0= RULE_INT ) )+
-            int cnt7=0;
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+            // InternalDawn.g:766:3: ( (lv_positionEnum_3_0= rulePositionEnum ) )
+            // InternalDawn.g:767:4: (lv_positionEnum_3_0= rulePositionEnum )
+            {
+            // InternalDawn.g:767:4: (lv_positionEnum_3_0= rulePositionEnum )
+            // InternalDawn.g:768:5: lv_positionEnum_3_0= rulePositionEnum
+            {
 
-                if ( (LA7_0==RULE_INT) ) {
-                    alt7=1;
-                }
+            					newCompositeNode(grammarAccess.getPositionAttributeAccess().getPositionEnumPositionEnumParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_20);
+            lv_positionEnum_3_0=rulePositionEnum();
 
-
-                switch (alt7) {
-            	case 1 :
-            	    // InternalDawn.g:628:4: (lv_x_3_0= RULE_INT )
-            	    {
-            	    // InternalDawn.g:628:4: (lv_x_3_0= RULE_INT )
-            	    // InternalDawn.g:629:5: lv_x_3_0= RULE_INT
-            	    {
-            	    lv_x_3_0=(Token)match(input,RULE_INT,FOLLOW_26); 
-
-            	    					newLeafNode(lv_x_3_0, grammarAccess.getPositionAttributeAccess().getXINTTerminalRuleCall_3_0());
-            	    				
-
-            	    					if (current==null) {
-            	    						current = createModelElement(grammarAccess.getPositionAttributeRule());
-            	    					}
-            	    					addWithLastConsumed(
-            	    						current,
-            	    						"x",
-            	    						lv_x_3_0,
-            	    						"org.eclipse.xtext.common.Terminals.INT");
-            	    				
-
-            	    }
+            state._fsp--;
 
 
-            	    }
-            	    break;
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getPositionAttributeRule());
+            					}
+            					set(
+            						current,
+            						"positionEnum",
+            						lv_positionEnum_3_0,
+            						"org.xtext.example.dawn.Dawn.PositionEnum");
+            					afterParserOrEnumRuleCall();
+            				
 
-            	default :
-            	    if ( cnt7 >= 1 ) break loop7;
-                        EarlyExitException eee =
-                            new EarlyExitException(7, input);
-                        throw eee;
-                }
-                cnt7++;
-            } while (true);
-
-            otherlv_4=(Token)match(input,19,FOLLOW_19); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getPositionAttributeAccess().getCommaKeyword_4());
-            		
-            // InternalDawn.g:649:3: ( (lv_y_5_0= RULE_INT ) )+
-            int cnt8=0;
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
-
-                if ( (LA8_0==RULE_INT) ) {
-                    alt8=1;
-                }
+            }
 
 
-                switch (alt8) {
-            	case 1 :
-            	    // InternalDawn.g:650:4: (lv_y_5_0= RULE_INT )
-            	    {
-            	    // InternalDawn.g:650:4: (lv_y_5_0= RULE_INT )
-            	    // InternalDawn.g:651:5: lv_y_5_0= RULE_INT
-            	    {
-            	    lv_y_5_0=(Token)match(input,RULE_INT,FOLLOW_27); 
+            }
 
-            	    					newLeafNode(lv_y_5_0, grammarAccess.getPositionAttributeAccess().getYINTTerminalRuleCall_5_0());
-            	    				
+            otherlv_4=(Token)match(input,32,FOLLOW_2); 
 
-            	    					if (current==null) {
-            	    						current = createModelElement(grammarAccess.getPositionAttributeRule());
-            	    					}
-            	    					addWithLastConsumed(
-            	    						current,
-            	    						"y",
-            	    						lv_y_5_0,
-            	    						"org.eclipse.xtext.common.Terminals.INT");
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt8 >= 1 ) break loop8;
-                        EarlyExitException eee =
-                            new EarlyExitException(8, input);
-                        throw eee;
-                }
-                cnt8++;
-            } while (true);
-
-            otherlv_6=(Token)match(input,24,FOLLOW_2); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getPositionAttributeAccess().getRightSquareBracketKeyword_6());
+            			newLeafNode(otherlv_4, grammarAccess.getPositionAttributeAccess().getRightSquareBracketKeyword_4());
             		
 
             }
@@ -1654,7 +2024,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleButton"
-    // InternalDawn.g:675:1: entryRuleButton returns [EObject current=null] : iv_ruleButton= ruleButton EOF ;
+    // InternalDawn.g:793:1: entryRuleButton returns [EObject current=null] : iv_ruleButton= ruleButton EOF ;
     public final EObject entryRuleButton() throws RecognitionException {
         EObject current = null;
 
@@ -1662,8 +2032,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:675:47: (iv_ruleButton= ruleButton EOF )
-            // InternalDawn.g:676:2: iv_ruleButton= ruleButton EOF
+            // InternalDawn.g:793:47: (iv_ruleButton= ruleButton EOF )
+            // InternalDawn.g:794:2: iv_ruleButton= ruleButton EOF
             {
              newCompositeNode(grammarAccess.getButtonRule()); 
             pushFollow(FOLLOW_1);
@@ -1690,7 +2060,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleButton"
-    // InternalDawn.g:682:1: ruleButton returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')' ) ;
+    // InternalDawn.g:800:1: ruleButton returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')' ) ;
     public final EObject ruleButton() throws RecognitionException {
         EObject current = null;
 
@@ -1708,29 +2078,29 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:688:2: ( (otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')' ) )
-            // InternalDawn.g:689:2: (otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')' )
+            // InternalDawn.g:806:2: ( (otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')' ) )
+            // InternalDawn.g:807:2: (otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')' )
             {
-            // InternalDawn.g:689:2: (otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')' )
-            // InternalDawn.g:690:3: otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')'
+            // InternalDawn.g:807:2: (otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')' )
+            // InternalDawn.g:808:3: otherlv_0= 'new' otherlv_1= 'button' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleButtonAttributes ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_28); 
+            otherlv_0=(Token)match(input,12,FOLLOW_27); 
 
             			newLeafNode(otherlv_0, grammarAccess.getButtonAccess().getNewKeyword_0());
             		
-            otherlv_1=(Token)match(input,29,FOLLOW_29); 
+            otherlv_1=(Token)match(input,42,FOLLOW_28); 
 
             			newLeafNode(otherlv_1, grammarAccess.getButtonAccess().getButtonKeyword_1());
             		
-            otherlv_2=(Token)match(input,30,FOLLOW_7); 
+            otherlv_2=(Token)match(input,43,FOLLOW_7); 
 
             			newLeafNode(otherlv_2, grammarAccess.getButtonAccess().getEqualsSignKeyword_2());
             		
-            // InternalDawn.g:702:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalDawn.g:703:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:820:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalDawn.g:821:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalDawn.g:703:4: (lv_name_3_0= RULE_ID )
-            // InternalDawn.g:704:5: lv_name_3_0= RULE_ID
+            // InternalDawn.g:821:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:822:5: lv_name_3_0= RULE_ID
             {
             lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -1756,15 +2126,15 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getButtonAccess().getAttributesKeyword_4());
             		
-            otherlv_5=(Token)match(input,16,FOLLOW_30); 
+            otherlv_5=(Token)match(input,16,FOLLOW_29); 
 
             			newLeafNode(otherlv_5, grammarAccess.getButtonAccess().getLeftParenthesisKeyword_5());
             		
-            // InternalDawn.g:728:3: ( (lv_attributes_6_0= ruleButtonAttributes ) )
-            // InternalDawn.g:729:4: (lv_attributes_6_0= ruleButtonAttributes )
+            // InternalDawn.g:846:3: ( (lv_attributes_6_0= ruleButtonAttributes ) )
+            // InternalDawn.g:847:4: (lv_attributes_6_0= ruleButtonAttributes )
             {
-            // InternalDawn.g:729:4: (lv_attributes_6_0= ruleButtonAttributes )
-            // InternalDawn.g:730:5: lv_attributes_6_0= ruleButtonAttributes
+            // InternalDawn.g:847:4: (lv_attributes_6_0= ruleButtonAttributes )
+            // InternalDawn.g:848:5: lv_attributes_6_0= ruleButtonAttributes
             {
 
             					newCompositeNode(grammarAccess.getButtonAccess().getAttributesButtonAttributesParserRuleCall_6_0());
@@ -1818,7 +2188,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleButtonAttributes"
-    // InternalDawn.g:755:1: entryRuleButtonAttributes returns [EObject current=null] : iv_ruleButtonAttributes= ruleButtonAttributes EOF ;
+    // InternalDawn.g:873:1: entryRuleButtonAttributes returns [EObject current=null] : iv_ruleButtonAttributes= ruleButtonAttributes EOF ;
     public final EObject entryRuleButtonAttributes() throws RecognitionException {
         EObject current = null;
 
@@ -1826,8 +2196,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:755:57: (iv_ruleButtonAttributes= ruleButtonAttributes EOF )
-            // InternalDawn.g:756:2: iv_ruleButtonAttributes= ruleButtonAttributes EOF
+            // InternalDawn.g:873:57: (iv_ruleButtonAttributes= ruleButtonAttributes EOF )
+            // InternalDawn.g:874:2: iv_ruleButtonAttributes= ruleButtonAttributes EOF
             {
              newCompositeNode(grammarAccess.getButtonAttributesRule()); 
             pushFollow(FOLLOW_1);
@@ -1854,7 +2224,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleButtonAttributes"
-    // InternalDawn.g:762:1: ruleButtonAttributes returns [EObject current=null] : ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) ) ) ;
+    // InternalDawn.g:880:1: ruleButtonAttributes returns [EObject current=null] : ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) ) ) ;
     public final EObject ruleButtonAttributes() throws RecognitionException {
         EObject current = null;
 
@@ -1868,17 +2238,17 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:768:2: ( ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) ) ) )
-            // InternalDawn.g:769:2: ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) ) )
+            // InternalDawn.g:886:2: ( ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) ) ) )
+            // InternalDawn.g:887:2: ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) ) )
             {
-            // InternalDawn.g:769:2: ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) ) )
-            // InternalDawn.g:770:3: ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) )
+            // InternalDawn.g:887:2: ( ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) ) )
+            // InternalDawn.g:888:3: ( (lv_text_0_0= ruleTextAttribute ) ) otherlv_1= ',' ( (lv_method_2_0= ruleCall ) )
             {
-            // InternalDawn.g:770:3: ( (lv_text_0_0= ruleTextAttribute ) )
-            // InternalDawn.g:771:4: (lv_text_0_0= ruleTextAttribute )
+            // InternalDawn.g:888:3: ( (lv_text_0_0= ruleTextAttribute ) )
+            // InternalDawn.g:889:4: (lv_text_0_0= ruleTextAttribute )
             {
-            // InternalDawn.g:771:4: (lv_text_0_0= ruleTextAttribute )
-            // InternalDawn.g:772:5: lv_text_0_0= ruleTextAttribute
+            // InternalDawn.g:889:4: (lv_text_0_0= ruleTextAttribute )
+            // InternalDawn.g:890:5: lv_text_0_0= ruleTextAttribute
             {
 
             					newCompositeNode(grammarAccess.getButtonAttributesAccess().getTextTextAttributeParserRuleCall_0_0());
@@ -1905,15 +2275,15 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,19,FOLLOW_31); 
+            otherlv_1=(Token)match(input,19,FOLLOW_30); 
 
             			newLeafNode(otherlv_1, grammarAccess.getButtonAttributesAccess().getCommaKeyword_1());
             		
-            // InternalDawn.g:793:3: ( (lv_method_2_0= ruleCall ) )
-            // InternalDawn.g:794:4: (lv_method_2_0= ruleCall )
+            // InternalDawn.g:911:3: ( (lv_method_2_0= ruleCall ) )
+            // InternalDawn.g:912:4: (lv_method_2_0= ruleCall )
             {
-            // InternalDawn.g:794:4: (lv_method_2_0= ruleCall )
-            // InternalDawn.g:795:5: lv_method_2_0= ruleCall
+            // InternalDawn.g:912:4: (lv_method_2_0= ruleCall )
+            // InternalDawn.g:913:5: lv_method_2_0= ruleCall
             {
 
             					newCompositeNode(grammarAccess.getButtonAttributesAccess().getMethodCallParserRuleCall_2_0());
@@ -1963,7 +2333,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCall"
-    // InternalDawn.g:816:1: entryRuleCall returns [EObject current=null] : iv_ruleCall= ruleCall EOF ;
+    // InternalDawn.g:934:1: entryRuleCall returns [EObject current=null] : iv_ruleCall= ruleCall EOF ;
     public final EObject entryRuleCall() throws RecognitionException {
         EObject current = null;
 
@@ -1971,8 +2341,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:816:45: (iv_ruleCall= ruleCall EOF )
-            // InternalDawn.g:817:2: iv_ruleCall= ruleCall EOF
+            // InternalDawn.g:934:45: (iv_ruleCall= ruleCall EOF )
+            // InternalDawn.g:935:2: iv_ruleCall= ruleCall EOF
             {
              newCompositeNode(grammarAccess.getCallRule()); 
             pushFollow(FOLLOW_1);
@@ -1999,7 +2369,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCall"
-    // InternalDawn.g:823:1: ruleCall returns [EObject current=null] : (otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalDawn.g:941:1: ruleCall returns [EObject current=null] : (otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleCall() throws RecognitionException {
         EObject current = null;
 
@@ -2010,21 +2380,21 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:829:2: ( (otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalDawn.g:830:2: (otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalDawn.g:947:2: ( (otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalDawn.g:948:2: (otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalDawn.g:830:2: (otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalDawn.g:831:3: otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) )
+            // InternalDawn.g:948:2: (otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalDawn.g:949:3: otherlv_0= 'function:' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_7); 
+            otherlv_0=(Token)match(input,44,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCallAccess().getFunctionKeyword_0());
             		
-            // InternalDawn.g:835:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalDawn.g:836:4: (lv_name_1_0= RULE_ID )
+            // InternalDawn.g:953:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDawn.g:954:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalDawn.g:836:4: (lv_name_1_0= RULE_ID )
-            // InternalDawn.g:837:5: lv_name_1_0= RULE_ID
+            // InternalDawn.g:954:4: (lv_name_1_0= RULE_ID )
+            // InternalDawn.g:955:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2069,7 +2439,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextField"
-    // InternalDawn.g:857:1: entryRuleTextField returns [EObject current=null] : iv_ruleTextField= ruleTextField EOF ;
+    // InternalDawn.g:975:1: entryRuleTextField returns [EObject current=null] : iv_ruleTextField= ruleTextField EOF ;
     public final EObject entryRuleTextField() throws RecognitionException {
         EObject current = null;
 
@@ -2077,8 +2447,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:857:50: (iv_ruleTextField= ruleTextField EOF )
-            // InternalDawn.g:858:2: iv_ruleTextField= ruleTextField EOF
+            // InternalDawn.g:975:50: (iv_ruleTextField= ruleTextField EOF )
+            // InternalDawn.g:976:2: iv_ruleTextField= ruleTextField EOF
             {
              newCompositeNode(grammarAccess.getTextFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -2105,7 +2475,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextField"
-    // InternalDawn.g:864:1: ruleTextField returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) ;
+    // InternalDawn.g:982:1: ruleTextField returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) ;
     public final EObject ruleTextField() throws RecognitionException {
         EObject current = null;
 
@@ -2123,29 +2493,29 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:870:2: ( (otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) )
-            // InternalDawn.g:871:2: (otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
+            // InternalDawn.g:988:2: ( (otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) )
+            // InternalDawn.g:989:2: (otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
             {
-            // InternalDawn.g:871:2: (otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
-            // InternalDawn.g:872:3: otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')'
+            // InternalDawn.g:989:2: (otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
+            // InternalDawn.g:990:3: otherlv_0= 'new' otherlv_1= 'text-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_32); 
+            otherlv_0=(Token)match(input,12,FOLLOW_31); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTextFieldAccess().getNewKeyword_0());
             		
-            otherlv_1=(Token)match(input,32,FOLLOW_29); 
+            otherlv_1=(Token)match(input,45,FOLLOW_28); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTextFieldAccess().getTextFieldKeyword_1());
             		
-            otherlv_2=(Token)match(input,30,FOLLOW_7); 
+            otherlv_2=(Token)match(input,43,FOLLOW_7); 
 
             			newLeafNode(otherlv_2, grammarAccess.getTextFieldAccess().getEqualsSignKeyword_2());
             		
-            // InternalDawn.g:884:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalDawn.g:885:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:1002:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalDawn.g:1003:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalDawn.g:885:4: (lv_name_3_0= RULE_ID )
-            // InternalDawn.g:886:5: lv_name_3_0= RULE_ID
+            // InternalDawn.g:1003:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:1004:5: lv_name_3_0= RULE_ID
             {
             lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -2171,15 +2541,15 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getTextFieldAccess().getAttributesKeyword_4());
             		
-            otherlv_5=(Token)match(input,16,FOLLOW_30); 
+            otherlv_5=(Token)match(input,16,FOLLOW_29); 
 
             			newLeafNode(otherlv_5, grammarAccess.getTextFieldAccess().getLeftParenthesisKeyword_5());
             		
-            // InternalDawn.g:910:3: ( (lv_text_6_0= ruleTextAttribute ) )
-            // InternalDawn.g:911:4: (lv_text_6_0= ruleTextAttribute )
+            // InternalDawn.g:1028:3: ( (lv_text_6_0= ruleTextAttribute ) )
+            // InternalDawn.g:1029:4: (lv_text_6_0= ruleTextAttribute )
             {
-            // InternalDawn.g:911:4: (lv_text_6_0= ruleTextAttribute )
-            // InternalDawn.g:912:5: lv_text_6_0= ruleTextAttribute
+            // InternalDawn.g:1029:4: (lv_text_6_0= ruleTextAttribute )
+            // InternalDawn.g:1030:5: lv_text_6_0= ruleTextAttribute
             {
 
             					newCompositeNode(grammarAccess.getTextFieldAccess().getTextTextAttributeParserRuleCall_6_0());
@@ -2233,7 +2603,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextLabel"
-    // InternalDawn.g:937:1: entryRuleTextLabel returns [EObject current=null] : iv_ruleTextLabel= ruleTextLabel EOF ;
+    // InternalDawn.g:1055:1: entryRuleTextLabel returns [EObject current=null] : iv_ruleTextLabel= ruleTextLabel EOF ;
     public final EObject entryRuleTextLabel() throws RecognitionException {
         EObject current = null;
 
@@ -2241,8 +2611,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:937:50: (iv_ruleTextLabel= ruleTextLabel EOF )
-            // InternalDawn.g:938:2: iv_ruleTextLabel= ruleTextLabel EOF
+            // InternalDawn.g:1055:50: (iv_ruleTextLabel= ruleTextLabel EOF )
+            // InternalDawn.g:1056:2: iv_ruleTextLabel= ruleTextLabel EOF
             {
              newCompositeNode(grammarAccess.getTextLabelRule()); 
             pushFollow(FOLLOW_1);
@@ -2269,7 +2639,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextLabel"
-    // InternalDawn.g:944:1: ruleTextLabel returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) ;
+    // InternalDawn.g:1062:1: ruleTextLabel returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) ;
     public final EObject ruleTextLabel() throws RecognitionException {
         EObject current = null;
 
@@ -2287,29 +2657,29 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:950:2: ( (otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) )
-            // InternalDawn.g:951:2: (otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
+            // InternalDawn.g:1068:2: ( (otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) )
+            // InternalDawn.g:1069:2: (otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
             {
-            // InternalDawn.g:951:2: (otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
-            // InternalDawn.g:952:3: otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')'
+            // InternalDawn.g:1069:2: (otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
+            // InternalDawn.g:1070:3: otherlv_0= 'new' otherlv_1= 'text-label' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_33); 
+            otherlv_0=(Token)match(input,12,FOLLOW_32); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTextLabelAccess().getNewKeyword_0());
             		
-            otherlv_1=(Token)match(input,33,FOLLOW_29); 
+            otherlv_1=(Token)match(input,46,FOLLOW_28); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTextLabelAccess().getTextLabelKeyword_1());
             		
-            otherlv_2=(Token)match(input,30,FOLLOW_7); 
+            otherlv_2=(Token)match(input,43,FOLLOW_7); 
 
             			newLeafNode(otherlv_2, grammarAccess.getTextLabelAccess().getEqualsSignKeyword_2());
             		
-            // InternalDawn.g:964:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalDawn.g:965:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:1082:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalDawn.g:1083:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalDawn.g:965:4: (lv_name_3_0= RULE_ID )
-            // InternalDawn.g:966:5: lv_name_3_0= RULE_ID
+            // InternalDawn.g:1083:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:1084:5: lv_name_3_0= RULE_ID
             {
             lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -2335,15 +2705,15 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getTextLabelAccess().getAttributesKeyword_4());
             		
-            otherlv_5=(Token)match(input,16,FOLLOW_30); 
+            otherlv_5=(Token)match(input,16,FOLLOW_29); 
 
             			newLeafNode(otherlv_5, grammarAccess.getTextLabelAccess().getLeftParenthesisKeyword_5());
             		
-            // InternalDawn.g:990:3: ( (lv_text_6_0= ruleTextAttribute ) )
-            // InternalDawn.g:991:4: (lv_text_6_0= ruleTextAttribute )
+            // InternalDawn.g:1108:3: ( (lv_text_6_0= ruleTextAttribute ) )
+            // InternalDawn.g:1109:4: (lv_text_6_0= ruleTextAttribute )
             {
-            // InternalDawn.g:991:4: (lv_text_6_0= ruleTextAttribute )
-            // InternalDawn.g:992:5: lv_text_6_0= ruleTextAttribute
+            // InternalDawn.g:1109:4: (lv_text_6_0= ruleTextAttribute )
+            // InternalDawn.g:1110:5: lv_text_6_0= ruleTextAttribute
             {
 
             					newCompositeNode(grammarAccess.getTextLabelAccess().getTextTextAttributeParserRuleCall_6_0());
@@ -2397,7 +2767,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePasswordField"
-    // InternalDawn.g:1017:1: entryRulePasswordField returns [EObject current=null] : iv_rulePasswordField= rulePasswordField EOF ;
+    // InternalDawn.g:1135:1: entryRulePasswordField returns [EObject current=null] : iv_rulePasswordField= rulePasswordField EOF ;
     public final EObject entryRulePasswordField() throws RecognitionException {
         EObject current = null;
 
@@ -2405,8 +2775,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:1017:54: (iv_rulePasswordField= rulePasswordField EOF )
-            // InternalDawn.g:1018:2: iv_rulePasswordField= rulePasswordField EOF
+            // InternalDawn.g:1135:54: (iv_rulePasswordField= rulePasswordField EOF )
+            // InternalDawn.g:1136:2: iv_rulePasswordField= rulePasswordField EOF
             {
              newCompositeNode(grammarAccess.getPasswordFieldRule()); 
             pushFollow(FOLLOW_1);
@@ -2433,7 +2803,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePasswordField"
-    // InternalDawn.g:1024:1: rulePasswordField returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) ;
+    // InternalDawn.g:1142:1: rulePasswordField returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) ;
     public final EObject rulePasswordField() throws RecognitionException {
         EObject current = null;
 
@@ -2451,29 +2821,29 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:1030:2: ( (otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) )
-            // InternalDawn.g:1031:2: (otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
+            // InternalDawn.g:1148:2: ( (otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' ) )
+            // InternalDawn.g:1149:2: (otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
             {
-            // InternalDawn.g:1031:2: (otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
-            // InternalDawn.g:1032:3: otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')'
+            // InternalDawn.g:1149:2: (otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')' )
+            // InternalDawn.g:1150:3: otherlv_0= 'new' otherlv_1= 'password-field' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_text_6_0= ruleTextAttribute ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_34); 
+            otherlv_0=(Token)match(input,12,FOLLOW_33); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPasswordFieldAccess().getNewKeyword_0());
             		
-            otherlv_1=(Token)match(input,34,FOLLOW_29); 
+            otherlv_1=(Token)match(input,47,FOLLOW_28); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPasswordFieldAccess().getPasswordFieldKeyword_1());
             		
-            otherlv_2=(Token)match(input,30,FOLLOW_7); 
+            otherlv_2=(Token)match(input,43,FOLLOW_7); 
 
             			newLeafNode(otherlv_2, grammarAccess.getPasswordFieldAccess().getEqualsSignKeyword_2());
             		
-            // InternalDawn.g:1044:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalDawn.g:1045:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:1162:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalDawn.g:1163:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalDawn.g:1045:4: (lv_name_3_0= RULE_ID )
-            // InternalDawn.g:1046:5: lv_name_3_0= RULE_ID
+            // InternalDawn.g:1163:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:1164:5: lv_name_3_0= RULE_ID
             {
             lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -2499,15 +2869,15 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getPasswordFieldAccess().getAttributesKeyword_4());
             		
-            otherlv_5=(Token)match(input,16,FOLLOW_30); 
+            otherlv_5=(Token)match(input,16,FOLLOW_29); 
 
             			newLeafNode(otherlv_5, grammarAccess.getPasswordFieldAccess().getLeftParenthesisKeyword_5());
             		
-            // InternalDawn.g:1070:3: ( (lv_text_6_0= ruleTextAttribute ) )
-            // InternalDawn.g:1071:4: (lv_text_6_0= ruleTextAttribute )
+            // InternalDawn.g:1188:3: ( (lv_text_6_0= ruleTextAttribute ) )
+            // InternalDawn.g:1189:4: (lv_text_6_0= ruleTextAttribute )
             {
-            // InternalDawn.g:1071:4: (lv_text_6_0= ruleTextAttribute )
-            // InternalDawn.g:1072:5: lv_text_6_0= ruleTextAttribute
+            // InternalDawn.g:1189:4: (lv_text_6_0= ruleTextAttribute )
+            // InternalDawn.g:1190:5: lv_text_6_0= ruleTextAttribute
             {
 
             					newCompositeNode(grammarAccess.getPasswordFieldAccess().getTextTextAttributeParserRuleCall_6_0());
@@ -2561,7 +2931,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSingleChoice"
-    // InternalDawn.g:1097:1: entryRuleSingleChoice returns [EObject current=null] : iv_ruleSingleChoice= ruleSingleChoice EOF ;
+    // InternalDawn.g:1215:1: entryRuleSingleChoice returns [EObject current=null] : iv_ruleSingleChoice= ruleSingleChoice EOF ;
     public final EObject entryRuleSingleChoice() throws RecognitionException {
         EObject current = null;
 
@@ -2569,8 +2939,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:1097:53: (iv_ruleSingleChoice= ruleSingleChoice EOF )
-            // InternalDawn.g:1098:2: iv_ruleSingleChoice= ruleSingleChoice EOF
+            // InternalDawn.g:1215:53: (iv_ruleSingleChoice= ruleSingleChoice EOF )
+            // InternalDawn.g:1216:2: iv_ruleSingleChoice= ruleSingleChoice EOF
             {
              newCompositeNode(grammarAccess.getSingleChoiceRule()); 
             pushFollow(FOLLOW_1);
@@ -2597,7 +2967,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSingleChoice"
-    // InternalDawn.g:1104:1: ruleSingleChoice returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')' ) ;
+    // InternalDawn.g:1222:1: ruleSingleChoice returns [EObject current=null] : (otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')' ) ;
     public final EObject ruleSingleChoice() throws RecognitionException {
         EObject current = null;
 
@@ -2615,29 +2985,29 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:1110:2: ( (otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')' ) )
-            // InternalDawn.g:1111:2: (otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')' )
+            // InternalDawn.g:1228:2: ( (otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')' ) )
+            // InternalDawn.g:1229:2: (otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')' )
             {
-            // InternalDawn.g:1111:2: (otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')' )
-            // InternalDawn.g:1112:3: otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')'
+            // InternalDawn.g:1229:2: (otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')' )
+            // InternalDawn.g:1230:3: otherlv_0= 'new' otherlv_1= 'choice' otherlv_2= '=' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= 'attributes' otherlv_5= '(' ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_35); 
+            otherlv_0=(Token)match(input,12,FOLLOW_34); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSingleChoiceAccess().getNewKeyword_0());
             		
-            otherlv_1=(Token)match(input,35,FOLLOW_29); 
+            otherlv_1=(Token)match(input,48,FOLLOW_28); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSingleChoiceAccess().getChoiceKeyword_1());
             		
-            otherlv_2=(Token)match(input,30,FOLLOW_7); 
+            otherlv_2=(Token)match(input,43,FOLLOW_7); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSingleChoiceAccess().getEqualsSignKeyword_2());
             		
-            // InternalDawn.g:1124:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalDawn.g:1125:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:1242:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalDawn.g:1243:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalDawn.g:1125:4: (lv_name_3_0= RULE_ID )
-            // InternalDawn.g:1126:5: lv_name_3_0= RULE_ID
+            // InternalDawn.g:1243:4: (lv_name_3_0= RULE_ID )
+            // InternalDawn.g:1244:5: lv_name_3_0= RULE_ID
             {
             lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -2663,15 +3033,15 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getSingleChoiceAccess().getAttributesKeyword_4());
             		
-            otherlv_5=(Token)match(input,16,FOLLOW_30); 
+            otherlv_5=(Token)match(input,16,FOLLOW_29); 
 
             			newLeafNode(otherlv_5, grammarAccess.getSingleChoiceAccess().getLeftParenthesisKeyword_5());
             		
-            // InternalDawn.g:1150:3: ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) )
-            // InternalDawn.g:1151:4: (lv_attributes_6_0= ruleSingleChoiceAttributes )
+            // InternalDawn.g:1268:3: ( (lv_attributes_6_0= ruleSingleChoiceAttributes ) )
+            // InternalDawn.g:1269:4: (lv_attributes_6_0= ruleSingleChoiceAttributes )
             {
-            // InternalDawn.g:1151:4: (lv_attributes_6_0= ruleSingleChoiceAttributes )
-            // InternalDawn.g:1152:5: lv_attributes_6_0= ruleSingleChoiceAttributes
+            // InternalDawn.g:1269:4: (lv_attributes_6_0= ruleSingleChoiceAttributes )
+            // InternalDawn.g:1270:5: lv_attributes_6_0= ruleSingleChoiceAttributes
             {
 
             					newCompositeNode(grammarAccess.getSingleChoiceAccess().getAttributesSingleChoiceAttributesParserRuleCall_6_0());
@@ -2725,7 +3095,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSingleChoiceAttributes"
-    // InternalDawn.g:1177:1: entryRuleSingleChoiceAttributes returns [EObject current=null] : iv_ruleSingleChoiceAttributes= ruleSingleChoiceAttributes EOF ;
+    // InternalDawn.g:1295:1: entryRuleSingleChoiceAttributes returns [EObject current=null] : iv_ruleSingleChoiceAttributes= ruleSingleChoiceAttributes EOF ;
     public final EObject entryRuleSingleChoiceAttributes() throws RecognitionException {
         EObject current = null;
 
@@ -2733,8 +3103,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:1177:63: (iv_ruleSingleChoiceAttributes= ruleSingleChoiceAttributes EOF )
-            // InternalDawn.g:1178:2: iv_ruleSingleChoiceAttributes= ruleSingleChoiceAttributes EOF
+            // InternalDawn.g:1295:63: (iv_ruleSingleChoiceAttributes= ruleSingleChoiceAttributes EOF )
+            // InternalDawn.g:1296:2: iv_ruleSingleChoiceAttributes= ruleSingleChoiceAttributes EOF
             {
              newCompositeNode(grammarAccess.getSingleChoiceAttributesRule()); 
             pushFollow(FOLLOW_1);
@@ -2761,7 +3131,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSingleChoiceAttributes"
-    // InternalDawn.g:1184:1: ruleSingleChoiceAttributes returns [EObject current=null] : ( ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+ ) ;
+    // InternalDawn.g:1302:1: ruleSingleChoiceAttributes returns [EObject current=null] : ( ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+ ) ;
     public final EObject ruleSingleChoiceAttributes() throws RecognitionException {
         EObject current = null;
 
@@ -2776,17 +3146,17 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:1190:2: ( ( ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+ ) )
-            // InternalDawn.g:1191:2: ( ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+ )
+            // InternalDawn.g:1308:2: ( ( ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+ ) )
+            // InternalDawn.g:1309:2: ( ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+ )
             {
-            // InternalDawn.g:1191:2: ( ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+ )
-            // InternalDawn.g:1192:3: ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+
+            // InternalDawn.g:1309:2: ( ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+ )
+            // InternalDawn.g:1310:3: ( (lv_text_0_0= ruleTextAttribute ) ) (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+
             {
-            // InternalDawn.g:1192:3: ( (lv_text_0_0= ruleTextAttribute ) )
-            // InternalDawn.g:1193:4: (lv_text_0_0= ruleTextAttribute )
+            // InternalDawn.g:1310:3: ( (lv_text_0_0= ruleTextAttribute ) )
+            // InternalDawn.g:1311:4: (lv_text_0_0= ruleTextAttribute )
             {
-            // InternalDawn.g:1193:4: (lv_text_0_0= ruleTextAttribute )
-            // InternalDawn.g:1194:5: lv_text_0_0= ruleTextAttribute
+            // InternalDawn.g:1311:4: (lv_text_0_0= ruleTextAttribute )
+            // InternalDawn.g:1312:5: lv_text_0_0= ruleTextAttribute
             {
 
             					newCompositeNode(grammarAccess.getSingleChoiceAttributesAccess().getTextTextAttributeParserRuleCall_0_0());
@@ -2813,40 +3183,40 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDawn.g:1211:3: (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+
-            int cnt9=0;
-            loop9:
+            // InternalDawn.g:1329:3: (otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) ) )+
+            int cnt10=0;
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==19) ) {
-                    alt9=1;
+                if ( (LA10_0==19) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalDawn.g:1212:4: otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) )
+            	    // InternalDawn.g:1330:4: otherlv_1= ',' otherlv_2= 'options' ( (lv_components_3_0= ruleSingleChoiceOptions ) )
             	    {
-            	    otherlv_1=(Token)match(input,19,FOLLOW_36); 
+            	    otherlv_1=(Token)match(input,19,FOLLOW_35); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getSingleChoiceAttributesAccess().getCommaKeyword_1_0());
             	    			
-            	    otherlv_2=(Token)match(input,36,FOLLOW_37); 
+            	    otherlv_2=(Token)match(input,49,FOLLOW_36); 
 
             	    				newLeafNode(otherlv_2, grammarAccess.getSingleChoiceAttributesAccess().getOptionsKeyword_1_1());
             	    			
-            	    // InternalDawn.g:1220:4: ( (lv_components_3_0= ruleSingleChoiceOptions ) )
-            	    // InternalDawn.g:1221:5: (lv_components_3_0= ruleSingleChoiceOptions )
+            	    // InternalDawn.g:1338:4: ( (lv_components_3_0= ruleSingleChoiceOptions ) )
+            	    // InternalDawn.g:1339:5: (lv_components_3_0= ruleSingleChoiceOptions )
             	    {
-            	    // InternalDawn.g:1221:5: (lv_components_3_0= ruleSingleChoiceOptions )
-            	    // InternalDawn.g:1222:6: lv_components_3_0= ruleSingleChoiceOptions
+            	    // InternalDawn.g:1339:5: (lv_components_3_0= ruleSingleChoiceOptions )
+            	    // InternalDawn.g:1340:6: lv_components_3_0= ruleSingleChoiceOptions
             	    {
 
             	    						newCompositeNode(grammarAccess.getSingleChoiceAttributesAccess().getComponentsSingleChoiceOptionsParserRuleCall_1_2_0());
             	    					
-            	    pushFollow(FOLLOW_38);
+            	    pushFollow(FOLLOW_37);
             	    lv_components_3_0=ruleSingleChoiceOptions();
 
             	    state._fsp--;
@@ -2873,12 +3243,12 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt9 >= 1 ) break loop9;
+            	    if ( cnt10 >= 1 ) break loop10;
                         EarlyExitException eee =
-                            new EarlyExitException(9, input);
+                            new EarlyExitException(10, input);
                         throw eee;
                 }
-                cnt9++;
+                cnt10++;
             } while (true);
 
 
@@ -2904,7 +3274,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSingleChoiceOptions"
-    // InternalDawn.g:1244:1: entryRuleSingleChoiceOptions returns [EObject current=null] : iv_ruleSingleChoiceOptions= ruleSingleChoiceOptions EOF ;
+    // InternalDawn.g:1362:1: entryRuleSingleChoiceOptions returns [EObject current=null] : iv_ruleSingleChoiceOptions= ruleSingleChoiceOptions EOF ;
     public final EObject entryRuleSingleChoiceOptions() throws RecognitionException {
         EObject current = null;
 
@@ -2912,8 +3282,8 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDawn.g:1244:60: (iv_ruleSingleChoiceOptions= ruleSingleChoiceOptions EOF )
-            // InternalDawn.g:1245:2: iv_ruleSingleChoiceOptions= ruleSingleChoiceOptions EOF
+            // InternalDawn.g:1362:60: (iv_ruleSingleChoiceOptions= ruleSingleChoiceOptions EOF )
+            // InternalDawn.g:1363:2: iv_ruleSingleChoiceOptions= ruleSingleChoiceOptions EOF
             {
              newCompositeNode(grammarAccess.getSingleChoiceOptionsRule()); 
             pushFollow(FOLLOW_1);
@@ -2940,7 +3310,7 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSingleChoiceOptions"
-    // InternalDawn.g:1251:1: ruleSingleChoiceOptions returns [EObject current=null] : (otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) ) ) ;
+    // InternalDawn.g:1369:1: ruleSingleChoiceOptions returns [EObject current=null] : (otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) ) ) ;
     public final EObject ruleSingleChoiceOptions() throws RecognitionException {
         EObject current = null;
 
@@ -2954,23 +3324,23 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDawn.g:1257:2: ( (otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) ) ) )
-            // InternalDawn.g:1258:2: (otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) ) )
+            // InternalDawn.g:1375:2: ( (otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) ) ) )
+            // InternalDawn.g:1376:2: (otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) ) )
             {
-            // InternalDawn.g:1258:2: (otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) ) )
-            // InternalDawn.g:1259:3: otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) )
+            // InternalDawn.g:1376:2: (otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) ) )
+            // InternalDawn.g:1377:3: otherlv_0= '()' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'labels' ( (lv_text_3_0= ruleTextAttribute ) )
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_7); 
+            otherlv_0=(Token)match(input,50,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSingleChoiceOptionsAccess().getLeftParenthesisRightParenthesisKeyword_0());
             		
-            // InternalDawn.g:1263:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalDawn.g:1264:4: (lv_name_1_0= RULE_ID )
+            // InternalDawn.g:1381:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDawn.g:1382:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalDawn.g:1264:4: (lv_name_1_0= RULE_ID )
-            // InternalDawn.g:1265:5: lv_name_1_0= RULE_ID
+            // InternalDawn.g:1382:4: (lv_name_1_0= RULE_ID )
+            // InternalDawn.g:1383:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_39); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_38); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getSingleChoiceOptionsAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -2990,15 +3360,15 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,38,FOLLOW_30); 
+            otherlv_2=(Token)match(input,51,FOLLOW_29); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSingleChoiceOptionsAccess().getLabelsKeyword_2());
             		
-            // InternalDawn.g:1285:3: ( (lv_text_3_0= ruleTextAttribute ) )
-            // InternalDawn.g:1286:4: (lv_text_3_0= ruleTextAttribute )
+            // InternalDawn.g:1403:3: ( (lv_text_3_0= ruleTextAttribute ) )
+            // InternalDawn.g:1404:4: (lv_text_3_0= ruleTextAttribute )
             {
-            // InternalDawn.g:1286:4: (lv_text_3_0= ruleTextAttribute )
-            // InternalDawn.g:1287:5: lv_text_3_0= ruleTextAttribute
+            // InternalDawn.g:1404:4: (lv_text_3_0= ruleTextAttribute )
+            // InternalDawn.g:1405:5: lv_text_3_0= ruleTextAttribute
             {
 
             					newCompositeNode(grammarAccess.getSingleChoiceOptionsAccess().getTextTextAttributeParserRuleCall_3_0());
@@ -3061,34 +3431,33 @@ public class InternalDawnParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000003FF00000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000004001000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004300000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000080040L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000001000040L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000400001000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x000000043FF00000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x000000F800000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0008000000000000L});
 
 }

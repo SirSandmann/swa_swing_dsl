@@ -35,19 +35,21 @@ class DawnGenerator extends AbstractGenerator {
 
 	def compile(Window w) '''
 		import javax.swing.*;
-		    public class «w.name» {
-		    	public static void main(String[] args){
-					JFrame «w.name» = new JFrame("«if(w.attributes.text != ""){w.attributes.text}»");
-					JPanel panel = new JPanel();
-					«FOR e : w.container.elements»
-						«e.compile»
-					«ENDFOR»
-					«w.name».add(panel); 
-					«w.name».pack();
-					«w.name».setSize(«w.attributes.size.height»,«w.attributes.size.width»);
-					«w.name».setVisible(true);
-					}
-				}
+		import java.awt.BorderLayout;
+		public class «w.name» {
+			public static void main(String[] args){
+				JFrame «w.name» = new JFrame("«if(w.attributes.text != ""){w.attributes.text}»");
+				JPanel panel = new JPanel();
+				«IF (w.attributes.layout != null)»panel.setLayout(new «w.attributes.layout»());«ENDIF»
+				«FOR e : w.container.elements»
+					«e.compile»
+				«ENDFOR»
+				«w.name».add(panel); 
+				«w.name».pack();
+				«w.name».setSize(«w.attributes.size.height»,«w.attributes.size.width»);
+				«w.name».setVisible(true);
+			}
+		}
 		'''
 
 	def compile(Element e) '''

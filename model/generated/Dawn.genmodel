@@ -19,8 +19,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//Component/name"/>
     </genClasses>
     <genClasses ecoreClass="Dawn.ecore#//WindowAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//WindowAttributes/layout"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dawn.ecore#//WindowAttributes/text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dawn.ecore#//WindowAttributes/size"/>
+    </genClasses>
+    <genClasses ecoreClass="Dawn.ecore#//GapAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//GapAttribute/gapWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//GapAttribute/gapHeight"/>
     </genClasses>
     <genClasses ecoreClass="Dawn.ecore#//TextAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//TextAttribute/text"/>
@@ -38,8 +43,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dawn.ecore#//Element/size"/>
     </genClasses>
     <genClasses ecoreClass="Dawn.ecore#//PositionAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//PositionAttribute/x"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//PositionAttribute/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//PositionAttribute/positionEnum"/>
     </genClasses>
     <genClasses ecoreClass="Dawn.ecore#//Button">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dawn.ecore#//Button/attributes"/>

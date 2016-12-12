@@ -19,6 +19,7 @@ import org.xtext.example.dawn.dawn.ButtonAttributes;
 import org.xtext.example.dawn.dawn.Container;
 import org.xtext.example.dawn.dawn.DawnPackage;
 import org.xtext.example.dawn.dawn.Element;
+import org.xtext.example.dawn.dawn.GapAttribute;
 import org.xtext.example.dawn.dawn.Model;
 import org.xtext.example.dawn.dawn.PasswordField;
 import org.xtext.example.dawn.dawn.PositionAttribute;
@@ -58,6 +59,9 @@ public class DawnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case DawnPackage.ELEMENT:
 				sequence_Element(context, (Element) semanticObject); 
+				return; 
+			case DawnPackage.GAP_ATTRIBUTE:
+				sequence_GapAttribute(context, (GapAttribute) semanticObject); 
 				return; 
 			case DawnPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -194,6 +198,27 @@ public class DawnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     GapAttribute returns GapAttribute
+	 *
+	 * Constraint:
+	 *     (gapWidth=INT gapHeight=INT)
+	 */
+	protected void sequence_GapAttribute(ISerializationContext context, GapAttribute semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DawnPackage.Literals.GAP_ATTRIBUTE__GAP_WIDTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DawnPackage.Literals.GAP_ATTRIBUTE__GAP_WIDTH));
+			if (transientValues.isValueTransient(semanticObject, DawnPackage.Literals.GAP_ATTRIBUTE__GAP_HEIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DawnPackage.Literals.GAP_ATTRIBUTE__GAP_HEIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGapAttributeAccess().getGapWidthINTTerminalRuleCall_3_0(), semanticObject.getGapWidth());
+		feeder.accept(grammarAccess.getGapAttributeAccess().getGapHeightINTTerminalRuleCall_5_0(), semanticObject.getGapHeight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
@@ -231,10 +256,16 @@ public class DawnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     PositionAttribute returns PositionAttribute
 	 *
 	 * Constraint:
-	 *     (x+=INT+ y+=INT+)
+	 *     positionEnum=PositionEnum
 	 */
 	protected void sequence_PositionAttribute(ISerializationContext context, PositionAttribute semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DawnPackage.Literals.POSITION_ATTRIBUTE__POSITION_ENUM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DawnPackage.Literals.POSITION_ATTRIBUTE__POSITION_ENUM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPositionAttributeAccess().getPositionEnumPositionEnumParserRuleCall_3_0(), semanticObject.getPositionEnum());
+		feeder.finish();
 	}
 	
 	
@@ -381,7 +412,7 @@ public class DawnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     WindowAttributes returns WindowAttributes
 	 *
 	 * Constraint:
-	 *     (text=TextAttribute? size=SizeAttribute)
+	 *     (layout=LayoutAttribute? text=TextAttribute? size=SizeAttribute)
 	 */
 	protected void sequence_WindowAttributes(ISerializationContext context, WindowAttributes semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

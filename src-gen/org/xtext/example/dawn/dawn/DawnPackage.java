@@ -179,13 +179,22 @@ public interface DawnPackage extends EPackage
   int WINDOW_ATTRIBUTES = 3;
 
   /**
+   * The feature id for the '<em><b>Layout</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WINDOW_ATTRIBUTES__LAYOUT = 0;
+
+  /**
    * The feature id for the '<em><b>Text</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WINDOW_ATTRIBUTES__TEXT = 0;
+  int WINDOW_ATTRIBUTES__TEXT = 1;
 
   /**
    * The feature id for the '<em><b>Size</b></em>' containment reference.
@@ -194,7 +203,7 @@ public interface DawnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WINDOW_ATTRIBUTES__SIZE = 1;
+  int WINDOW_ATTRIBUTES__SIZE = 2;
 
   /**
    * The number of structural features of the '<em>Window Attributes</em>' class.
@@ -203,7 +212,44 @@ public interface DawnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WINDOW_ATTRIBUTES_FEATURE_COUNT = 2;
+  int WINDOW_ATTRIBUTES_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.dawn.dawn.impl.GapAttributeImpl <em>Gap Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.dawn.dawn.impl.GapAttributeImpl
+   * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getGapAttribute()
+   * @generated
+   */
+  int GAP_ATTRIBUTE = 4;
+
+  /**
+   * The feature id for the '<em><b>Gap Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAP_ATTRIBUTE__GAP_WIDTH = 0;
+
+  /**
+   * The feature id for the '<em><b>Gap Height</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAP_ATTRIBUTE__GAP_HEIGHT = 1;
+
+  /**
+   * The number of structural features of the '<em>Gap Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GAP_ATTRIBUTE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.dawn.dawn.impl.TextAttributeImpl <em>Text Attribute</em>}' class.
@@ -213,7 +259,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getTextAttribute()
    * @generated
    */
-  int TEXT_ATTRIBUTE = 4;
+  int TEXT_ATTRIBUTE = 5;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -241,7 +287,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getSizeAttribute()
    * @generated
    */
-  int SIZE_ATTRIBUTE = 5;
+  int SIZE_ATTRIBUTE = 6;
 
   /**
    * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -278,7 +324,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getContainer()
    * @generated
    */
-  int CONTAINER = 6;
+  int CONTAINER = 7;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -306,7 +352,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 7;
+  int ELEMENT = 8;
 
   /**
    * The feature id for the '<em><b>Component</b></em>' containment reference.
@@ -352,25 +398,16 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getPositionAttribute()
    * @generated
    */
-  int POSITION_ATTRIBUTE = 8;
+  int POSITION_ATTRIBUTE = 9;
 
   /**
-   * The feature id for the '<em><b>X</b></em>' attribute list.
+   * The feature id for the '<em><b>Position Enum</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POSITION_ATTRIBUTE__X = 0;
-
-  /**
-   * The feature id for the '<em><b>Y</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POSITION_ATTRIBUTE__Y = 1;
+  int POSITION_ATTRIBUTE__POSITION_ENUM = 0;
 
   /**
    * The number of structural features of the '<em>Position Attribute</em>' class.
@@ -379,7 +416,7 @@ public interface DawnPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POSITION_ATTRIBUTE_FEATURE_COUNT = 2;
+  int POSITION_ATTRIBUTE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.dawn.dawn.impl.ButtonImpl <em>Button</em>}' class.
@@ -389,7 +426,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getButton()
    * @generated
    */
-  int BUTTON = 9;
+  int BUTTON = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -426,7 +463,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getButtonAttributes()
    * @generated
    */
-  int BUTTON_ATTRIBUTES = 10;
+  int BUTTON_ATTRIBUTES = 11;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -463,7 +500,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getTextField()
    * @generated
    */
-  int TEXT_FIELD = 11;
+  int TEXT_FIELD = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -500,7 +537,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getTextLabel()
    * @generated
    */
-  int TEXT_LABEL = 12;
+  int TEXT_LABEL = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -537,7 +574,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getPasswordField()
    * @generated
    */
-  int PASSWORD_FIELD = 13;
+  int PASSWORD_FIELD = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -574,7 +611,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getSingleChoice()
    * @generated
    */
-  int SINGLE_CHOICE = 14;
+  int SINGLE_CHOICE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -611,7 +648,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getSingleChoiceAttributes()
    * @generated
    */
-  int SINGLE_CHOICE_ATTRIBUTES = 15;
+  int SINGLE_CHOICE_ATTRIBUTES = 16;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -648,7 +685,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getSingleChoiceOptions()
    * @generated
    */
-  int SINGLE_CHOICE_OPTIONS = 16;
+  int SINGLE_CHOICE_OPTIONS = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -785,6 +822,17 @@ public interface DawnPackage extends EPackage
   EClass getWindowAttributes();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.dawn.dawn.WindowAttributes#getLayout <em>Layout</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Layout</em>'.
+   * @see org.xtext.example.dawn.dawn.WindowAttributes#getLayout()
+   * @see #getWindowAttributes()
+   * @generated
+   */
+  EAttribute getWindowAttributes_Layout();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.dawn.dawn.WindowAttributes#getText <em>Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -805,6 +853,38 @@ public interface DawnPackage extends EPackage
    * @generated
    */
   EReference getWindowAttributes_Size();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.dawn.dawn.GapAttribute <em>Gap Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Gap Attribute</em>'.
+   * @see org.xtext.example.dawn.dawn.GapAttribute
+   * @generated
+   */
+  EClass getGapAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.dawn.dawn.GapAttribute#getGapWidth <em>Gap Width</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Gap Width</em>'.
+   * @see org.xtext.example.dawn.dawn.GapAttribute#getGapWidth()
+   * @see #getGapAttribute()
+   * @generated
+   */
+  EAttribute getGapAttribute_GapWidth();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.dawn.dawn.GapAttribute#getGapHeight <em>Gap Height</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Gap Height</em>'.
+   * @see org.xtext.example.dawn.dawn.GapAttribute#getGapHeight()
+   * @see #getGapAttribute()
+   * @generated
+   */
+  EAttribute getGapAttribute_GapHeight();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.dawn.dawn.TextAttribute <em>Text Attribute</em>}'.
@@ -934,26 +1014,15 @@ public interface DawnPackage extends EPackage
   EClass getPositionAttribute();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.example.dawn.dawn.PositionAttribute#getX <em>X</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.dawn.dawn.PositionAttribute#getPositionEnum <em>Position Enum</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>X</em>'.
-   * @see org.xtext.example.dawn.dawn.PositionAttribute#getX()
+   * @return the meta object for the attribute '<em>Position Enum</em>'.
+   * @see org.xtext.example.dawn.dawn.PositionAttribute#getPositionEnum()
    * @see #getPositionAttribute()
    * @generated
    */
-  EAttribute getPositionAttribute_X();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.example.dawn.dawn.PositionAttribute#getY <em>Y</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Y</em>'.
-   * @see org.xtext.example.dawn.dawn.PositionAttribute#getY()
-   * @see #getPositionAttribute()
-   * @generated
-   */
-  EAttribute getPositionAttribute_Y();
+  EAttribute getPositionAttribute_PositionEnum();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.dawn.dawn.Button <em>Button</em>}'.
@@ -1268,6 +1337,14 @@ public interface DawnPackage extends EPackage
     EClass WINDOW_ATTRIBUTES = eINSTANCE.getWindowAttributes();
 
     /**
+     * The meta object literal for the '<em><b>Layout</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WINDOW_ATTRIBUTES__LAYOUT = eINSTANCE.getWindowAttributes_Layout();
+
+    /**
      * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1282,6 +1359,32 @@ public interface DawnPackage extends EPackage
      * @generated
      */
     EReference WINDOW_ATTRIBUTES__SIZE = eINSTANCE.getWindowAttributes_Size();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.dawn.dawn.impl.GapAttributeImpl <em>Gap Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.dawn.dawn.impl.GapAttributeImpl
+     * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getGapAttribute()
+     * @generated
+     */
+    EClass GAP_ATTRIBUTE = eINSTANCE.getGapAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Gap Width</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GAP_ATTRIBUTE__GAP_WIDTH = eINSTANCE.getGapAttribute_GapWidth();
+
+    /**
+     * The meta object literal for the '<em><b>Gap Height</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GAP_ATTRIBUTE__GAP_HEIGHT = eINSTANCE.getGapAttribute_GapHeight();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.dawn.dawn.impl.TextAttributeImpl <em>Text Attribute</em>}' class.
@@ -1390,20 +1493,12 @@ public interface DawnPackage extends EPackage
     EClass POSITION_ATTRIBUTE = eINSTANCE.getPositionAttribute();
 
     /**
-     * The meta object literal for the '<em><b>X</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Position Enum</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute POSITION_ATTRIBUTE__X = eINSTANCE.getPositionAttribute_X();
-
-    /**
-     * The meta object literal for the '<em><b>Y</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute POSITION_ATTRIBUTE__Y = eINSTANCE.getPositionAttribute_Y();
+    EAttribute POSITION_ATTRIBUTE__POSITION_ENUM = eINSTANCE.getPositionAttribute_PositionEnum();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.dawn.dawn.impl.ButtonImpl <em>Button</em>}' class.

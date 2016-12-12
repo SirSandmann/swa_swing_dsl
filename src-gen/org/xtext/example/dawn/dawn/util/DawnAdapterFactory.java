@@ -96,6 +96,11 @@ public class DawnAdapterFactory extends AdapterFactoryImpl
         return createWindowAttributesAdapter();
       }
       @Override
+      public Adapter caseGapAttribute(GapAttribute object)
+      {
+        return createGapAttributeAdapter();
+      }
+      @Override
       public Adapter caseTextAttribute(TextAttribute object)
       {
         return createTextAttributeAdapter();
@@ -238,6 +243,21 @@ public class DawnAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWindowAttributesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.dawn.dawn.GapAttribute <em>Gap Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.dawn.dawn.GapAttribute
+   * @generated
+   */
+  public Adapter createGapAttributeAdapter()
   {
     return null;
   }

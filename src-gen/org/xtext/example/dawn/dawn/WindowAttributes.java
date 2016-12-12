@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.dawn.dawn.WindowAttributes#getLayout <em>Layout</em>}</li>
  *   <li>{@link org.xtext.example.dawn.dawn.WindowAttributes#getText <em>Text</em>}</li>
  *   <li>{@link org.xtext.example.dawn.dawn.WindowAttributes#getSize <em>Size</em>}</li>
  * </ul>
@@ -24,6 +25,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface WindowAttributes extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Layout</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Layout</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Layout</em>' attribute.
+   * @see #setLayout(String)
+   * @see org.xtext.example.dawn.dawn.DawnPackage#getWindowAttributes_Layout()
+   * @model
+   * @generated
+   */
+  String getLayout();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.dawn.dawn.WindowAttributes#getLayout <em>Layout</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Layout</em>' attribute.
+   * @see #getLayout()
+   * @generated
+   */
+  void setLayout(String value);
+
   /**
    * Returns the value of the '<em><b>Text</b></em>' containment reference.
    * <!-- begin-user-doc -->

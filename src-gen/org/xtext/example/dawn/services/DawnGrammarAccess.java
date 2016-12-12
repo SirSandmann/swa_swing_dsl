@@ -154,36 +154,144 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.WindowAttributes");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Assignment cTextAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cTextTextAttributeParserRuleCall_0_0_0 = (RuleCall)cTextAssignment_0_0.eContents().get(0);
+		private final Assignment cLayoutAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cLayoutLayoutAttributeParserRuleCall_0_0_0 = (RuleCall)cLayoutAssignment_0_0.eContents().get(0);
 		private final Keyword cCommaKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cSizeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cSizeSizeAttributeParserRuleCall_1_0 = (RuleCall)cSizeAssignment_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cTextAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cTextTextAttributeParserRuleCall_1_0_0 = (RuleCall)cTextAssignment_1_0.eContents().get(0);
+		private final Keyword cCommaKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cSizeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSizeSizeAttributeParserRuleCall_2_0 = (RuleCall)cSizeAssignment_2.eContents().get(0);
 		
 		//WindowAttributes:
-		//	(text=TextAttribute ',')? size=SizeAttribute;
+		//	(layout=LayoutAttribute ',')? (text=TextAttribute ',')? size=SizeAttribute;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(text=TextAttribute ',')? size=SizeAttribute
+		//(layout=LayoutAttribute ',')? (text=TextAttribute ',')? size=SizeAttribute
 		public Group getGroup() { return cGroup; }
 		
-		//(text=TextAttribute ',')?
+		//(layout=LayoutAttribute ',')?
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//text=TextAttribute
-		public Assignment getTextAssignment_0_0() { return cTextAssignment_0_0; }
+		//layout=LayoutAttribute
+		public Assignment getLayoutAssignment_0_0() { return cLayoutAssignment_0_0; }
 		
-		//TextAttribute
-		public RuleCall getTextTextAttributeParserRuleCall_0_0_0() { return cTextTextAttributeParserRuleCall_0_0_0; }
+		//LayoutAttribute
+		public RuleCall getLayoutLayoutAttributeParserRuleCall_0_0_0() { return cLayoutLayoutAttributeParserRuleCall_0_0_0; }
 		
 		//','
 		public Keyword getCommaKeyword_0_1() { return cCommaKeyword_0_1; }
 		
+		//(text=TextAttribute ',')?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//text=TextAttribute
+		public Assignment getTextAssignment_1_0() { return cTextAssignment_1_0; }
+		
+		//TextAttribute
+		public RuleCall getTextTextAttributeParserRuleCall_1_0_0() { return cTextTextAttributeParserRuleCall_1_0_0; }
+		
+		//','
+		public Keyword getCommaKeyword_1_1() { return cCommaKeyword_1_1; }
+		
 		//size=SizeAttribute
-		public Assignment getSizeAssignment_1() { return cSizeAssignment_1; }
+		public Assignment getSizeAssignment_2() { return cSizeAssignment_2; }
 		
 		//SizeAttribute
-		public RuleCall getSizeSizeAttributeParserRuleCall_1_0() { return cSizeSizeAttributeParserRuleCall_1_0; }
+		public RuleCall getSizeSizeAttributeParserRuleCall_2_0() { return cSizeSizeAttributeParserRuleCall_2_0; }
+	}
+	public class LayoutAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.LayoutAttribute");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cBorderLayoutKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cBoxLayoutKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cCardLayoutKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cFlowLayoutKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cGridBagLayoutKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cGridLayoutKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cGroupLayoutKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cSpringLayoutKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		
+		//LayoutAttribute:
+		//	'BorderLayout' | 'BoxLayout' | 'CardLayout' | 'FlowLayout' | 'GridBagLayout' | 'GridLayout' | 'GroupLayout' |
+		//	'SpringLayout';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'BorderLayout' | 'BoxLayout' | 'CardLayout' | 'FlowLayout' | 'GridBagLayout' | 'GridLayout' | 'GroupLayout' |
+		//'SpringLayout'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'BorderLayout'
+		public Keyword getBorderLayoutKeyword_0() { return cBorderLayoutKeyword_0; }
+		
+		//'BoxLayout'
+		public Keyword getBoxLayoutKeyword_1() { return cBoxLayoutKeyword_1; }
+		
+		//'CardLayout'
+		public Keyword getCardLayoutKeyword_2() { return cCardLayoutKeyword_2; }
+		
+		//'FlowLayout'
+		public Keyword getFlowLayoutKeyword_3() { return cFlowLayoutKeyword_3; }
+		
+		//'GridBagLayout'
+		public Keyword getGridBagLayoutKeyword_4() { return cGridBagLayoutKeyword_4; }
+		
+		//'GridLayout'
+		public Keyword getGridLayoutKeyword_5() { return cGridLayoutKeyword_5; }
+		
+		//'GroupLayout'
+		public Keyword getGroupLayoutKeyword_6() { return cGroupLayoutKeyword_6; }
+		
+		//'SpringLayout'
+		public Keyword getSpringLayoutKeyword_7() { return cSpringLayoutKeyword_7; }
+	}
+	public class GapAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.GapAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWithKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cGapsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cGapWidthAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cGapWidthINTTerminalRuleCall_3_0 = (RuleCall)cGapWidthAssignment_3.eContents().get(0);
+		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cGapHeightAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cGapHeightINTTerminalRuleCall_5_0 = (RuleCall)cGapHeightAssignment_5.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//GapAttribute:
+		//	'with' 'gaps' '[' gapWidth=INT ',' gapHeight=INT ']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'with' 'gaps' '[' gapWidth=INT ',' gapHeight=INT ']'
+		public Group getGroup() { return cGroup; }
+		
+		//'with'
+		public Keyword getWithKeyword_0() { return cWithKeyword_0; }
+		
+		//'gaps'
+		public Keyword getGapsKeyword_1() { return cGapsKeyword_1; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
+		
+		//gapWidth=INT
+		public Assignment getGapWidthAssignment_3() { return cGapWidthAssignment_3; }
+		
+		//INT
+		public RuleCall getGapWidthINTTerminalRuleCall_3_0() { return cGapWidthINTTerminalRuleCall_3_0; }
+		
+		//','
+		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		
+		//gapHeight=INT
+		public Assignment getGapHeightAssignment_5() { return cGapHeightAssignment_5; }
+		
+		//INT
+		public RuleCall getGapHeightINTTerminalRuleCall_5_0() { return cGapHeightINTTerminalRuleCall_5_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
 	}
 	public class TextAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.TextAttribute");
@@ -325,24 +433,52 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		//'|'
 		public Keyword getVerticalLineKeyword_3() { return cVerticalLineKeyword_3; }
 	}
+	public class PositionEnumElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.PositionEnum");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cPAGE_STARTKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cPAGE_ENDKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cLINE_STARTKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cLINE_ENDKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cCENTERKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		
+		//PositionEnum:
+		//	'PAGE_START' | 'PAGE_END' | 'LINE_START' | 'LINE_END' | 'CENTER';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'PAGE_START' | 'PAGE_END' | 'LINE_START' | 'LINE_END' | 'CENTER'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'PAGE_START'
+		public Keyword getPAGE_STARTKeyword_0() { return cPAGE_STARTKeyword_0; }
+		
+		//'PAGE_END'
+		public Keyword getPAGE_ENDKeyword_1() { return cPAGE_ENDKeyword_1; }
+		
+		//'LINE_START'
+		public Keyword getLINE_STARTKeyword_2() { return cLINE_STARTKeyword_2; }
+		
+		//'LINE_END'
+		public Keyword getLINE_ENDKeyword_3() { return cLINE_ENDKeyword_3; }
+		
+		//'CENTER'
+		public Keyword getCENTERKeyword_4() { return cCENTERKeyword_4; }
+	}
 	public class PositionAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.PositionAttribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAtKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cPositionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cXAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cXINTTerminalRuleCall_3_0 = (RuleCall)cXAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cYAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cYINTTerminalRuleCall_5_0 = (RuleCall)cYAssignment_5.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cPositionEnumAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPositionEnumPositionEnumParserRuleCall_3_0 = (RuleCall)cPositionEnumAssignment_3.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//PositionAttribute:
-		//	'at' 'position' '[' x+=INT+ ',' y+=INT+ ']';
+		//	'at' 'position' '[' positionEnum=PositionEnum ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'at' 'position' '[' x+=INT+ ',' y+=INT+ ']'
+		//'at' 'position' '[' positionEnum=PositionEnum ']'
 		public Group getGroup() { return cGroup; }
 		
 		//'at'
@@ -354,23 +490,14 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
 		
-		//x+=INT+
-		public Assignment getXAssignment_3() { return cXAssignment_3; }
+		//positionEnum=PositionEnum
+		public Assignment getPositionEnumAssignment_3() { return cPositionEnumAssignment_3; }
 		
-		//INT
-		public RuleCall getXINTTerminalRuleCall_3_0() { return cXINTTerminalRuleCall_3_0; }
-		
-		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
-		
-		//y+=INT+
-		public Assignment getYAssignment_5() { return cYAssignment_5; }
-		
-		//INT
-		public RuleCall getYINTTerminalRuleCall_5_0() { return cYINTTerminalRuleCall_5_0; }
+		//PositionEnum
+		public RuleCall getPositionEnumPositionEnumParserRuleCall_3_0() { return cPositionEnumPositionEnumParserRuleCall_3_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
+		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
 	}
 	public class ButtonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.Button");
@@ -761,10 +888,13 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 	private final WindowElements pWindow;
 	private final ComponentElements pComponent;
 	private final WindowAttributesElements pWindowAttributes;
+	private final LayoutAttributeElements pLayoutAttribute;
+	private final GapAttributeElements pGapAttribute;
 	private final TextAttributeElements pTextAttribute;
 	private final SizeAttributeElements pSizeAttribute;
 	private final ContainerElements pContainer;
 	private final ElementElements pElement;
+	private final PositionEnumElements pPositionEnum;
 	private final PositionAttributeElements pPositionAttribute;
 	private final ButtonElements pButton;
 	private final ButtonAttributesElements pButtonAttributes;
@@ -789,10 +919,13 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		this.pWindow = new WindowElements();
 		this.pComponent = new ComponentElements();
 		this.pWindowAttributes = new WindowAttributesElements();
+		this.pLayoutAttribute = new LayoutAttributeElements();
+		this.pGapAttribute = new GapAttributeElements();
 		this.pTextAttribute = new TextAttributeElements();
 		this.pSizeAttribute = new SizeAttributeElements();
 		this.pContainer = new ContainerElements();
 		this.pElement = new ElementElements();
+		this.pPositionEnum = new PositionEnumElements();
 		this.pPositionAttribute = new PositionAttributeElements();
 		this.pButton = new ButtonElements();
 		this.pButtonAttributes = new ButtonAttributesElements();
@@ -866,13 +999,34 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WindowAttributes:
-	//	(text=TextAttribute ',')? size=SizeAttribute;
+	//	(layout=LayoutAttribute ',')? (text=TextAttribute ',')? size=SizeAttribute;
 	public WindowAttributesElements getWindowAttributesAccess() {
 		return pWindowAttributes;
 	}
 	
 	public ParserRule getWindowAttributesRule() {
 		return getWindowAttributesAccess().getRule();
+	}
+	
+	//LayoutAttribute:
+	//	'BorderLayout' | 'BoxLayout' | 'CardLayout' | 'FlowLayout' | 'GridBagLayout' | 'GridLayout' | 'GroupLayout' |
+	//	'SpringLayout';
+	public LayoutAttributeElements getLayoutAttributeAccess() {
+		return pLayoutAttribute;
+	}
+	
+	public ParserRule getLayoutAttributeRule() {
+		return getLayoutAttributeAccess().getRule();
+	}
+	
+	//GapAttribute:
+	//	'with' 'gaps' '[' gapWidth=INT ',' gapHeight=INT ']';
+	public GapAttributeElements getGapAttributeAccess() {
+		return pGapAttribute;
+	}
+	
+	public ParserRule getGapAttributeRule() {
+		return getGapAttributeAccess().getRule();
 	}
 	
 	//TextAttribute:
@@ -915,8 +1069,18 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		return getElementAccess().getRule();
 	}
 	
+	//PositionEnum:
+	//	'PAGE_START' | 'PAGE_END' | 'LINE_START' | 'LINE_END' | 'CENTER';
+	public PositionEnumElements getPositionEnumAccess() {
+		return pPositionEnum;
+	}
+	
+	public ParserRule getPositionEnumRule() {
+		return getPositionEnumAccess().getRule();
+	}
+	
 	//PositionAttribute:
-	//	'at' 'position' '[' x+=INT+ ',' y+=INT+ ']';
+	//	'at' 'position' '[' positionEnum=PositionEnum ']';
 	public PositionAttributeElements getPositionAttributeAccess() {
 		return pPositionAttribute;
 	}

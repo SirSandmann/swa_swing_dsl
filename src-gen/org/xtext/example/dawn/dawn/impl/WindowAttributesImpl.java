@@ -25,6 +25,7 @@ import org.xtext.example.dawn.dawn.WindowAttributes;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.example.dawn.dawn.impl.WindowAttributesImpl#getLayout <em>Layout</em>}</li>
  *   <li>{@link org.xtext.example.dawn.dawn.impl.WindowAttributesImpl#getText <em>Text</em>}</li>
  *   <li>{@link org.xtext.example.dawn.dawn.impl.WindowAttributesImpl#getSize <em>Size</em>}</li>
  * </ul>
@@ -33,6 +34,26 @@ import org.xtext.example.dawn.dawn.WindowAttributes;
  */
 public class WindowAttributesImpl extends MinimalEObjectImpl.Container implements WindowAttributes
 {
+  /**
+   * The default value of the '{@link #getLayout() <em>Layout</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLayout()
+   * @generated
+   * @ordered
+   */
+  protected static final String LAYOUT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLayout() <em>Layout</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLayout()
+   * @generated
+   * @ordered
+   */
+  protected String layout = LAYOUT_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -72,6 +93,29 @@ public class WindowAttributesImpl extends MinimalEObjectImpl.Container implement
   protected EClass eStaticClass()
   {
     return DawnPackage.Literals.WINDOW_ATTRIBUTES;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getLayout()
+  {
+    return layout;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLayout(String newLayout)
+  {
+    String oldLayout = layout;
+    layout = newLayout;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DawnPackage.WINDOW_ATTRIBUTES__LAYOUT, oldLayout, layout));
   }
 
   /**
@@ -198,6 +242,8 @@ public class WindowAttributesImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DawnPackage.WINDOW_ATTRIBUTES__LAYOUT:
+        return getLayout();
       case DawnPackage.WINDOW_ATTRIBUTES__TEXT:
         return getText();
       case DawnPackage.WINDOW_ATTRIBUTES__SIZE:
@@ -216,6 +262,9 @@ public class WindowAttributesImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DawnPackage.WINDOW_ATTRIBUTES__LAYOUT:
+        setLayout((String)newValue);
+        return;
       case DawnPackage.WINDOW_ATTRIBUTES__TEXT:
         setText((TextAttribute)newValue);
         return;
@@ -236,6 +285,9 @@ public class WindowAttributesImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DawnPackage.WINDOW_ATTRIBUTES__LAYOUT:
+        setLayout(LAYOUT_EDEFAULT);
+        return;
       case DawnPackage.WINDOW_ATTRIBUTES__TEXT:
         setText((TextAttribute)null);
         return;
@@ -256,12 +308,31 @@ public class WindowAttributesImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DawnPackage.WINDOW_ATTRIBUTES__LAYOUT:
+        return LAYOUT_EDEFAULT == null ? layout != null : !LAYOUT_EDEFAULT.equals(layout);
       case DawnPackage.WINDOW_ATTRIBUTES__TEXT:
         return text != null;
       case DawnPackage.WINDOW_ATTRIBUTES__SIZE:
         return size != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (layout: ");
+    result.append(layout);
+    result.append(')');
+    return result.toString();
   }
 
 } //WindowAttributesImpl

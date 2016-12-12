@@ -3,15 +3,12 @@
  */
 package org.xtext.example.dawn.dawn.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import org.xtext.example.dawn.dawn.DawnPackage;
 import org.xtext.example.dawn.dawn.PositionAttribute;
@@ -24,8 +21,7 @@ import org.xtext.example.dawn.dawn.PositionAttribute;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.dawn.dawn.impl.PositionAttributeImpl#getX <em>X</em>}</li>
- *   <li>{@link org.xtext.example.dawn.dawn.impl.PositionAttributeImpl#getY <em>Y</em>}</li>
+ *   <li>{@link org.xtext.example.dawn.dawn.impl.PositionAttributeImpl#getPositionEnum <em>Position Enum</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,24 +29,24 @@ import org.xtext.example.dawn.dawn.PositionAttribute;
 public class PositionAttributeImpl extends MinimalEObjectImpl.Container implements PositionAttribute
 {
   /**
-   * The cached value of the '{@link #getX() <em>X</em>}' attribute list.
+   * The default value of the '{@link #getPositionEnum() <em>Position Enum</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX()
+   * @see #getPositionEnum()
    * @generated
    * @ordered
    */
-  protected EList<Integer> x;
+  protected static final String POSITION_ENUM_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getY() <em>Y</em>}' attribute list.
+   * The cached value of the '{@link #getPositionEnum() <em>Position Enum</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getY()
+   * @see #getPositionEnum()
    * @generated
    * @ordered
    */
-  protected EList<Integer> y;
+  protected String positionEnum = POSITION_ENUM_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,13 +74,9 @@ public class PositionAttributeImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Integer> getX()
+  public String getPositionEnum()
   {
-    if (x == null)
-    {
-      x = new EDataTypeEList<Integer>(Integer.class, this, DawnPackage.POSITION_ATTRIBUTE__X);
-    }
-    return x;
+    return positionEnum;
   }
 
   /**
@@ -92,13 +84,12 @@ public class PositionAttributeImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Integer> getY()
+  public void setPositionEnum(String newPositionEnum)
   {
-    if (y == null)
-    {
-      y = new EDataTypeEList<Integer>(Integer.class, this, DawnPackage.POSITION_ATTRIBUTE__Y);
-    }
-    return y;
+    String oldPositionEnum = positionEnum;
+    positionEnum = newPositionEnum;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DawnPackage.POSITION_ATTRIBUTE__POSITION_ENUM, oldPositionEnum, positionEnum));
   }
 
   /**
@@ -111,10 +102,8 @@ public class PositionAttributeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case DawnPackage.POSITION_ATTRIBUTE__X:
-        return getX();
-      case DawnPackage.POSITION_ATTRIBUTE__Y:
-        return getY();
+      case DawnPackage.POSITION_ATTRIBUTE__POSITION_ENUM:
+        return getPositionEnum();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,19 +113,13 @@ public class PositionAttributeImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DawnPackage.POSITION_ATTRIBUTE__X:
-        getX().clear();
-        getX().addAll((Collection<? extends Integer>)newValue);
-        return;
-      case DawnPackage.POSITION_ATTRIBUTE__Y:
-        getY().clear();
-        getY().addAll((Collection<? extends Integer>)newValue);
+      case DawnPackage.POSITION_ATTRIBUTE__POSITION_ENUM:
+        setPositionEnum((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -152,11 +135,8 @@ public class PositionAttributeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case DawnPackage.POSITION_ATTRIBUTE__X:
-        getX().clear();
-        return;
-      case DawnPackage.POSITION_ATTRIBUTE__Y:
-        getY().clear();
+      case DawnPackage.POSITION_ATTRIBUTE__POSITION_ENUM:
+        setPositionEnum(POSITION_ENUM_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -172,10 +152,8 @@ public class PositionAttributeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case DawnPackage.POSITION_ATTRIBUTE__X:
-        return x != null && !x.isEmpty();
-      case DawnPackage.POSITION_ATTRIBUTE__Y:
-        return y != null && !y.isEmpty();
+      case DawnPackage.POSITION_ATTRIBUTE__POSITION_ENUM:
+        return POSITION_ENUM_EDEFAULT == null ? positionEnum != null : !POSITION_ENUM_EDEFAULT.equals(positionEnum);
     }
     return super.eIsSet(featureID);
   }
@@ -191,10 +169,8 @@ public class PositionAttributeImpl extends MinimalEObjectImpl.Container implemen
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (x: ");
-    result.append(x);
-    result.append(", y: ");
-    result.append(y);
+    result.append(" (positionEnum: ");
+    result.append(positionEnum);
     result.append(')');
     return result.toString();
   }

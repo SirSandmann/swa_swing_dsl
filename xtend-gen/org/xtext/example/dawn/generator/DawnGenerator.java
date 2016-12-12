@@ -59,19 +59,20 @@ public class DawnGenerator extends AbstractGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import javax.swing.*;");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("import java.awt.BorderLayout;");
+    _builder.newLine();
     _builder.append("public class ");
     String _name = w.getName();
-    _builder.append(_name, "    ");
+    _builder.append(_name, "");
     _builder.append(" {");
     _builder.newLineIfNotEmpty();
-    _builder.append("    \t");
+    _builder.append("\t");
     _builder.append("public static void main(String[] args){");
     _builder.newLine();
-    _builder.append("\t\t\t");
+    _builder.append("\t\t");
     _builder.append("JFrame ");
     String _name_1 = w.getName();
-    _builder.append(_name_1, "\t\t\t");
+    _builder.append(_name_1, "\t\t");
     _builder.append(" = new JFrame(\"");
     TextAttribute _xifexpression = null;
     WindowAttributes _attributes = w.getAttributes();
@@ -81,56 +82,69 @@ public class DawnGenerator extends AbstractGenerator {
       WindowAttributes _attributes_1 = w.getAttributes();
       _xifexpression = _attributes_1.getText();
     }
-    _builder.append(_xifexpression, "\t\t\t");
+    _builder.append(_xifexpression, "\t\t");
     _builder.append("\");");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
+    _builder.append("\t\t");
     _builder.append("JPanel panel = new JPanel();");
     _builder.newLine();
+    _builder.append("\t\t");
+    {
+      WindowAttributes _attributes_2 = w.getAttributes();
+      String _layout = _attributes_2.getLayout();
+      boolean _notEquals_1 = (!Objects.equal(_layout, null));
+      if (_notEquals_1) {
+        _builder.append("panel.setLayout(new ");
+        WindowAttributes _attributes_3 = w.getAttributes();
+        String _layout_1 = _attributes_3.getLayout();
+        _builder.append(_layout_1, "\t\t");
+        _builder.append("());");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     {
       Container _container = w.getContainer();
       EList<Element> _elements = _container.getElements();
       for(final Element e : _elements) {
-        _builder.append("\t\t\t");
+        _builder.append("\t\t");
         CharSequence _compile = this.compile(e);
-        _builder.append(_compile, "\t\t\t");
+        _builder.append(_compile, "\t\t");
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("\t\t\t");
+    _builder.append("\t\t");
     String _name_2 = w.getName();
-    _builder.append(_name_2, "\t\t\t");
+    _builder.append(_name_2, "\t\t");
     _builder.append(".add(panel); ");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
+    _builder.append("\t\t");
     String _name_3 = w.getName();
-    _builder.append(_name_3, "\t\t\t");
+    _builder.append(_name_3, "\t\t");
     _builder.append(".pack();");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
+    _builder.append("\t\t");
     String _name_4 = w.getName();
-    _builder.append(_name_4, "\t\t\t");
+    _builder.append(_name_4, "\t\t");
     _builder.append(".setSize(");
-    WindowAttributes _attributes_2 = w.getAttributes();
-    SizeAttribute _size = _attributes_2.getSize();
+    WindowAttributes _attributes_4 = w.getAttributes();
+    SizeAttribute _size = _attributes_4.getSize();
     int _height = _size.getHeight();
-    _builder.append(_height, "\t\t\t");
+    _builder.append(_height, "\t\t");
     _builder.append(",");
-    WindowAttributes _attributes_3 = w.getAttributes();
-    SizeAttribute _size_1 = _attributes_3.getSize();
+    WindowAttributes _attributes_5 = w.getAttributes();
+    SizeAttribute _size_1 = _attributes_5.getSize();
     int _width = _size_1.getWidth();
-    _builder.append(_width, "\t\t\t");
+    _builder.append(_width, "\t\t");
     _builder.append(");");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
+    _builder.append("\t\t");
     String _name_5 = w.getName();
-    _builder.append(_name_5, "\t\t\t");
+    _builder.append(_name_5, "\t\t");
     _builder.append(".setVisible(true);");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
+    _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
-    _builder.append("\t\t");
     _builder.append("}");
     _builder.newLine();
     return _builder;

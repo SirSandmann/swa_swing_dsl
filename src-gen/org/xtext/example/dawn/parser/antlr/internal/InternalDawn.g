@@ -307,18 +307,18 @@ ruleWindowAttributes returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getWindowAttributesAccess().getTextTextAttributeParserRuleCall_0_0_0());
+						newCompositeNode(grammarAccess.getWindowAttributesAccess().getLayoutLayoutAttributeParserRuleCall_0_0_0());
 					}
-					lv_text_0_0=ruleTextAttribute
+					lv_layout_0_0=ruleLayoutAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getWindowAttributesRule());
 						}
 						set(
 							$current,
-							"text",
-							lv_text_0_0,
-							"org.xtext.example.dawn.Dawn.TextAttribute");
+							"layout",
+							lv_layout_0_0,
+							"org.xtext.example.dawn.Dawn.LayoutAttribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -330,10 +330,35 @@ ruleWindowAttributes returns [EObject current=null]
 		)?
 		(
 			(
+				(
+					{
+						newCompositeNode(grammarAccess.getWindowAttributesAccess().getTextTextAttributeParserRuleCall_1_0_0());
+					}
+					lv_text_2_0=ruleTextAttribute
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getWindowAttributesRule());
+						}
+						set(
+							$current,
+							"text",
+							lv_text_2_0,
+							"org.xtext.example.dawn.Dawn.TextAttribute");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_3=','
+			{
+				newLeafNode(otherlv_3, grammarAccess.getWindowAttributesAccess().getCommaKeyword_1_1());
+			}
+		)?
+		(
+			(
 				{
-					newCompositeNode(grammarAccess.getWindowAttributesAccess().getSizeSizeAttributeParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getWindowAttributesAccess().getSizeSizeAttributeParserRuleCall_2_0());
 				}
-				lv_size_2_0=ruleSizeAttribute
+				lv_size_4_0=ruleSizeAttribute
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWindowAttributesRule());
@@ -341,12 +366,78 @@ ruleWindowAttributes returns [EObject current=null]
 					set(
 						$current,
 						"size",
-						lv_size_2_0,
+						lv_size_4_0,
 						"org.xtext.example.dawn.Dawn.SizeAttribute");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleLayoutAttribute
+entryRuleLayoutAttribute returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getLayoutAttributeRule()); }
+	iv_ruleLayoutAttribute=ruleLayoutAttribute
+	{ $current=$iv_ruleLayoutAttribute.current.getText(); }
+	EOF;
+
+// Rule LayoutAttribute
+ruleLayoutAttribute returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='BorderLayout'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getBorderLayoutKeyword_0());
+		}
+		    |
+		kw='BoxLayout'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getBoxLayoutKeyword_1());
+		}
+		    |
+		kw='CardLayout'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getCardLayoutKeyword_2());
+		}
+		    |
+		kw='FlowLayout'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getFlowLayoutKeyword_3());
+		}
+		    |
+		kw='GridBagLayout'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getGridBagLayoutKeyword_4());
+		}
+		    |
+		kw='GridLayout'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getGridLayoutKeyword_5());
+		}
+		    |
+		kw='GroupLayout'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getGroupLayoutKeyword_6());
+		}
+		    |
+		kw='SpringLayout'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getLayoutAttributeAccess().getSpringLayoutKeyword_7());
+		}
 	)
 ;
 
@@ -596,6 +687,54 @@ ruleElement returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRulePositionEnum
+entryRulePositionEnum returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getPositionEnumRule()); }
+	iv_rulePositionEnum=rulePositionEnum
+	{ $current=$iv_rulePositionEnum.current.getText(); }
+	EOF;
+
+// Rule PositionEnum
+rulePositionEnum returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='PAGE_START'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getPAGE_STARTKeyword_0());
+		}
+		    |
+		kw='PAGE_END'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getPAGE_ENDKeyword_1());
+		}
+		    |
+		kw='LINE_START'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getLINE_STARTKeyword_2());
+		}
+		    |
+		kw='LINE_END'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getLINE_ENDKeyword_3());
+		}
+		    |
+		kw='CENTER'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPositionEnumAccess().getCENTERKeyword_4());
+		}
+	)
+;
+
 // Entry rule entryRulePositionAttribute
 entryRulePositionAttribute returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getPositionAttributeRule()); }
@@ -626,47 +765,26 @@ rulePositionAttribute returns [EObject current=null]
 		}
 		(
 			(
-				lv_x_3_0=RULE_INT
 				{
-					newLeafNode(lv_x_3_0, grammarAccess.getPositionAttributeAccess().getXINTTerminalRuleCall_3_0());
+					newCompositeNode(grammarAccess.getPositionAttributeAccess().getPositionEnumPositionEnumParserRuleCall_3_0());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPositionAttributeRule());
-					}
-					addWithLastConsumed(
-						$current,
-						"x",
-						lv_x_3_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)+
-		otherlv_4=','
-		{
-			newLeafNode(otherlv_4, grammarAccess.getPositionAttributeAccess().getCommaKeyword_4());
-		}
-		(
-			(
-				lv_y_5_0=RULE_INT
-				{
-					newLeafNode(lv_y_5_0, grammarAccess.getPositionAttributeAccess().getYINTTerminalRuleCall_5_0());
-				}
+				lv_positionEnum_3_0=rulePositionEnum
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPositionAttributeRule());
+						$current = createModelElementForParent(grammarAccess.getPositionAttributeRule());
 					}
-					addWithLastConsumed(
+					set(
 						$current,
-						"y",
-						lv_y_5_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"positionEnum",
+						lv_positionEnum_3_0,
+						"org.xtext.example.dawn.Dawn.PositionEnum");
+					afterParserOrEnumRuleCall();
 				}
 			)
-		)+
-		otherlv_6=']'
+		)
+		otherlv_4=']'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getPositionAttributeAccess().getRightSquareBracketKeyword_6());
+			newLeafNode(otherlv_4, grammarAccess.getPositionAttributeAccess().getRightSquareBracketKeyword_4());
 		}
 	)
 ;
