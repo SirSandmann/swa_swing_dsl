@@ -3,23 +3,39 @@
  */
 package org.xtext.example.dawn.validation
 
+import org.eclipse.xtext.validation.Check
+import org.xtext.example.dawn.dawn.Window
+import org.xtext.example.dawn.dawn.Element
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class DawnValidator extends AbstractDawnValidator {
+
+	public static val INVALID_NAME = 'invalidName';
+	public static val INVALID_WIN_SIZE = 'invalidWindowSize';
+
+	@Check
+	def checkHeightOfWindow(Window w) {
+		if (w.attributes.size.height <= 0) {
+			warning('Window height must me greater than zero', null);
+		}
+	}
+
+	@Check
+	def checkWidthOfWindow(Window w) {
+		if (w.attributes.size.width <= 0) {
+			warning('Window width must me greater than zero', null);
+		}
+	}
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					DawnPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
-	
+	@Check
+	def elementsStartWithLowerCase(Element e) {
+		if (Character.isUpperCase(e.component.name.charAt(0))) {
+			warning('Component must start with a lowercase Letter', null);
+		}
+	}
+
 }

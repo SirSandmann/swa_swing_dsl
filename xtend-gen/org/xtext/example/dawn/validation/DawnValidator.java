@@ -3,6 +3,12 @@
  */
 package org.xtext.example.dawn.validation;
 
+import org.eclipse.xtext.validation.Check;
+import org.xtext.example.dawn.dawn.Component;
+import org.xtext.example.dawn.dawn.Element;
+import org.xtext.example.dawn.dawn.SizeAttribute;
+import org.xtext.example.dawn.dawn.Window;
+import org.xtext.example.dawn.dawn.WindowAttributes;
 import org.xtext.example.dawn.validation.AbstractDawnValidator;
 
 /**
@@ -12,4 +18,40 @@ import org.xtext.example.dawn.validation.AbstractDawnValidator;
  */
 @SuppressWarnings("all")
 public class DawnValidator extends AbstractDawnValidator {
+  public final static String INVALID_NAME = "invalidName";
+  
+  public final static String INVALID_WIN_SIZE = "invalidWindowSize";
+  
+  @Check
+  public void checkHeightOfWindow(final Window w) {
+    WindowAttributes _attributes = w.getAttributes();
+    SizeAttribute _size = _attributes.getSize();
+    int _height = _size.getHeight();
+    boolean _lessEqualsThan = (_height <= 0);
+    if (_lessEqualsThan) {
+      this.warning("Window height must me greater than zero", null);
+    }
+  }
+  
+  @Check
+  public void checkWidthOfWindow(final Window w) {
+    WindowAttributes _attributes = w.getAttributes();
+    SizeAttribute _size = _attributes.getSize();
+    int _width = _size.getWidth();
+    boolean _lessEqualsThan = (_width <= 0);
+    if (_lessEqualsThan) {
+      this.warning("Window width must me greater than zero", null);
+    }
+  }
+  
+  @Check
+  public void elementsStartWithLowerCase(final Element e) {
+    Component _component = e.getComponent();
+    String _name = _component.getName();
+    char _charAt = _name.charAt(0);
+    boolean _isUpperCase = Character.isUpperCase(_charAt);
+    if (_isUpperCase) {
+      this.warning("Component must start with a lowercase Letter", null);
+    }
+  }
 }
