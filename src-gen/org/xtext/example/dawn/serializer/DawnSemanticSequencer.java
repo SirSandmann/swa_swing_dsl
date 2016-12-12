@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.dawn.dawn.Button;
 import org.xtext.example.dawn.dawn.ButtonAttributes;
+import org.xtext.example.dawn.dawn.Call;
 import org.xtext.example.dawn.dawn.Container;
 import org.xtext.example.dawn.dawn.DawnPackage;
 import org.xtext.example.dawn.dawn.Element;
@@ -53,6 +54,9 @@ public class DawnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case DawnPackage.BUTTON_ATTRIBUTES:
 				sequence_ButtonAttributes(context, (ButtonAttributes) semanticObject); 
+				return; 
+			case DawnPackage.CALL:
+				sequence_Call(context, (Call) semanticObject); 
 				return; 
 			case DawnPackage.CONTAINER:
 				sequence_Container(context, (Container) semanticObject); 
@@ -94,15 +98,8 @@ public class DawnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_TextLabel(context, (TextLabel) semanticObject); 
 				return; 
 			case DawnPackage.WINDOW:
-				if (rule == grammarAccess.getCallRule()) {
-					sequence_Call(context, (Window) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getWindowRule()) {
-					sequence_Window(context, (Window) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Window(context, (Window) semanticObject); 
+				return; 
 			case DawnPackage.WINDOW_ATTRIBUTES:
 				sequence_WindowAttributes(context, (WindowAttributes) semanticObject); 
 				return; 
@@ -156,18 +153,21 @@ public class DawnSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Call returns Window
+	 *     Call returns Call
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID action=ActionEnum)
 	 */
-	protected void sequence_Call(ISerializationContext context, Window semanticObject) {
+	protected void sequence_Call(ISerializationContext context, Call semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DawnPackage.Literals.WINDOW__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DawnPackage.Literals.WINDOW__NAME));
+			if (transientValues.isValueTransient(semanticObject, DawnPackage.Literals.CALL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DawnPackage.Literals.CALL__NAME));
+			if (transientValues.isValueTransient(semanticObject, DawnPackage.Literals.CALL__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DawnPackage.Literals.CALL__ACTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCallAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCallAccess().getActionActionEnumParserRuleCall_3_0(), semanticObject.getAction());
 		feeder.finish();
 	}
 	

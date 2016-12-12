@@ -581,18 +581,40 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		//Call
 		public RuleCall getMethodCallParserRuleCall_2_0() { return cMethodCallParserRuleCall_2_0; }
 	}
+	public class ActionEnumElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.ActionEnum");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cNew_WindowKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cDialogKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//ActionEnum:
+		//	'new_Window' | 'Dialog';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'new_Window' | 'Dialog'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'new_Window'
+		public Keyword getNew_WindowKeyword_0() { return cNew_WindowKeyword_0; }
+		
+		//'Dialog'
+		public Keyword getDialogKeyword_1() { return cDialogKeyword_1; }
+	}
 	public class CallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.Call");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFunctionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cActionKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cActionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cActionActionEnumParserRuleCall_3_0 = (RuleCall)cActionAssignment_3.eContents().get(0);
 		
-		//Call Window:
-		//	'function:' name=ID
+		//Call:
+		//	'function:' name=ID 'action' action=ActionEnum;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'function:' name=ID
+		//'function:' name=ID 'action' action=ActionEnum
 		public Group getGroup() { return cGroup; }
 		
 		//'function:'
@@ -603,6 +625,15 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'action'
+		public Keyword getActionKeyword_2() { return cActionKeyword_2; }
+		
+		//action=ActionEnum
+		public Assignment getActionAssignment_3() { return cActionAssignment_3; }
+		
+		//ActionEnum
+		public RuleCall getActionActionEnumParserRuleCall_3_0() { return cActionActionEnumParserRuleCall_3_0; }
 	}
 	public class TextFieldElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.dawn.Dawn.TextField");
@@ -898,6 +929,7 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 	private final PositionAttributeElements pPositionAttribute;
 	private final ButtonElements pButton;
 	private final ButtonAttributesElements pButtonAttributes;
+	private final ActionEnumElements pActionEnum;
 	private final CallElements pCall;
 	private final TextFieldElements pTextField;
 	private final TextLabelElements pTextLabel;
@@ -929,6 +961,7 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPositionAttribute = new PositionAttributeElements();
 		this.pButton = new ButtonElements();
 		this.pButtonAttributes = new ButtonAttributesElements();
+		this.pActionEnum = new ActionEnumElements();
 		this.pCall = new CallElements();
 		this.pTextField = new TextFieldElements();
 		this.pTextLabel = new TextLabelElements();
@@ -1109,8 +1142,18 @@ public class DawnGrammarAccess extends AbstractGrammarElementFinder {
 		return getButtonAttributesAccess().getRule();
 	}
 	
-	//Call Window:
-	//	'function:' name=ID
+	//ActionEnum:
+	//	'new_Window' | 'Dialog';
+	public ActionEnumElements getActionEnumAccess() {
+		return pActionEnum;
+	}
+	
+	public ParserRule getActionEnumRule() {
+		return getActionEnumAccess().getRule();
+	}
+	
+	//Call:
+	//	'function:' name=ID 'action' action=ActionEnum;
 	public CallElements getCallAccess() {
 		return pCall;
 	}

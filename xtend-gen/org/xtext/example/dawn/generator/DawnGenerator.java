@@ -171,83 +171,121 @@ public class DawnGenerator extends AbstractGenerator {
         _builder.append(_name_1, "");
         _builder.append(");");
         _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      Component _component_4 = e.getComponent();
-      if ((_component_4 instanceof TextLabel)) {
-        _builder.append("JLabel ");
-        Component _component_5 = e.getComponent();
-        String _name_2 = _component_5.getName();
-        _builder.append(_name_2, "");
-        _builder.append(" = new JLabel(\"");
-        Component _component_6 = e.getComponent();
-        String _textLabelText = HelperClassTextLabel.getTextLabelText(_component_6);
-        _builder.append(_textLabelText, "");
-        _builder.append("\");");
-        _builder.newLineIfNotEmpty();
-        _builder.append("panel.add(");
-        Component _component_7 = e.getComponent();
-        String _name_3 = _component_7.getName();
-        _builder.append(_name_3, "");
-        _builder.append(");");
-        _builder.newLineIfNotEmpty();
+        {
+          Component _component_4 = e.getComponent();
+          String _buttonCall = HelperClassButton.getButtonCall(_component_4);
+          boolean _notEquals = (!Objects.equal(_buttonCall, ""));
+          if (_notEquals) {
+            Component _component_5 = e.getComponent();
+            String _name_2 = _component_5.getName();
+            _builder.append(_name_2, "");
+            _builder.append(".addActionListener(new ActionListener() { ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("  ");
+            _builder.append("public void actionPerformed(ActionEvent e) { ");
+            _builder.newLine();
+            {
+              Component _component_6 = e.getComponent();
+              String _buttonCall_1 = HelperClassButton.getButtonCall(_component_6);
+              boolean _equals = Objects.equal(_buttonCall_1, "new_Window");
+              if (_equals) {
+                _builder.append("    ");
+                _builder.newLine();
+              }
+            }
+            {
+              Component _component_7 = e.getComponent();
+              String _buttonCall_2 = HelperClassButton.getButtonCall(_component_7);
+              boolean _equals_1 = Objects.equal(_buttonCall_2, "Dialog");
+              if (_equals_1) {
+                _builder.append("    ");
+                _builder.newLine();
+              }
+            }
+            _builder.append("  ");
+            _builder.append("} ");
+            _builder.newLine();
+            _builder.append("} );");
+            _builder.newLine();
+          }
+        }
       }
     }
     {
       Component _component_8 = e.getComponent();
-      if ((_component_8 instanceof TextField)) {
-        _builder.append("JTextField ");
+      if ((_component_8 instanceof TextLabel)) {
+        _builder.append("JLabel ");
         Component _component_9 = e.getComponent();
-        String _name_4 = _component_9.getName();
-        _builder.append(_name_4, "");
-        _builder.append(" = new JTextField(\"");
+        String _name_3 = _component_9.getName();
+        _builder.append(_name_3, "");
+        _builder.append(" = new JLabel(\"");
         Component _component_10 = e.getComponent();
-        String _textFieldText = HelperClassTextField.getTextFieldText(_component_10);
-        _builder.append(_textFieldText, "");
+        String _textLabelText = HelperClassTextLabel.getTextLabelText(_component_10);
+        _builder.append(_textLabelText, "");
         _builder.append("\");");
         _builder.newLineIfNotEmpty();
         _builder.append("panel.add(");
         Component _component_11 = e.getComponent();
-        String _name_5 = _component_11.getName();
-        _builder.append(_name_5, "");
+        String _name_4 = _component_11.getName();
+        _builder.append(_name_4, "");
         _builder.append(");");
         _builder.newLineIfNotEmpty();
       }
     }
     {
       Component _component_12 = e.getComponent();
-      if ((_component_12 instanceof PasswordField)) {
-        _builder.append("JPasswordField ");
+      if ((_component_12 instanceof TextField)) {
+        _builder.append("JTextField ");
         Component _component_13 = e.getComponent();
-        String _name_6 = _component_13.getName();
-        _builder.append(_name_6, "");
-        _builder.append(" = new JPasswordField(\"");
+        String _name_5 = _component_13.getName();
+        _builder.append(_name_5, "");
+        _builder.append(" = new JTextField(\"");
         Component _component_14 = e.getComponent();
-        String _passwordFieldText = HelperClassPasswordField.getPasswordFieldText(_component_14);
-        _builder.append(_passwordFieldText, "");
+        String _textFieldText = HelperClassTextField.getTextFieldText(_component_14);
+        _builder.append(_textFieldText, "");
         _builder.append("\");");
         _builder.newLineIfNotEmpty();
         _builder.append("panel.add(");
         Component _component_15 = e.getComponent();
-        String _name_7 = _component_15.getName();
-        _builder.append(_name_7, "");
+        String _name_6 = _component_15.getName();
+        _builder.append(_name_6, "");
         _builder.append(");");
         _builder.newLineIfNotEmpty();
       }
     }
     {
       Component _component_16 = e.getComponent();
-      if ((_component_16 instanceof SingleChoice)) {
-        _builder.append("ButtonGroup bg_");
+      if ((_component_16 instanceof PasswordField)) {
+        _builder.append("JPasswordField ");
         Component _component_17 = e.getComponent();
-        String _name_8 = _component_17.getName();
+        String _name_7 = _component_17.getName();
+        _builder.append(_name_7, "");
+        _builder.append(" = new JPasswordField(\"");
+        Component _component_18 = e.getComponent();
+        String _passwordFieldText = HelperClassPasswordField.getPasswordFieldText(_component_18);
+        _builder.append(_passwordFieldText, "");
+        _builder.append("\");");
+        _builder.newLineIfNotEmpty();
+        _builder.append("panel.add(");
+        Component _component_19 = e.getComponent();
+        String _name_8 = _component_19.getName();
         _builder.append(_name_8, "");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      Component _component_20 = e.getComponent();
+      if ((_component_20 instanceof SingleChoice)) {
+        _builder.append("ButtonGroup bg_");
+        Component _component_21 = e.getComponent();
+        String _name_9 = _component_21.getName();
+        _builder.append(_name_9, "");
         _builder.append("=new ButtonGroup();");
         _builder.newLineIfNotEmpty();
         {
-          Component _component_18 = e.getComponent();
-          Map<String, String> _singleChoiceAttributeComponentsAttributes = HelperClassSingleChoice.getSingleChoiceAttributeComponentsAttributes(_component_18);
+          Component _component_22 = e.getComponent();
+          Map<String, String> _singleChoiceAttributeComponentsAttributes = HelperClassSingleChoice.getSingleChoiceAttributeComponentsAttributes(_component_22);
           Set<Map.Entry<String, String>> _entrySet = _singleChoiceAttributeComponentsAttributes.entrySet();
           for(final Map.Entry<String, String> r : _entrySet) {
             _builder.append("JRadioButton rb_");
@@ -259,9 +297,9 @@ public class DawnGenerator extends AbstractGenerator {
             _builder.append("\");");
             _builder.newLineIfNotEmpty();
             _builder.append("bg_");
-            Component _component_19 = e.getComponent();
-            String _name_9 = _component_19.getName();
-            _builder.append(_name_9, "");
+            Component _component_23 = e.getComponent();
+            String _name_10 = _component_23.getName();
+            _builder.append(_name_10, "");
             _builder.append(".add(rb_");
             String _key_1 = r.getKey();
             _builder.append(_key_1, "");

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.dawn.dawn.Button;
 import org.xtext.example.dawn.dawn.ButtonAttributes;
+import org.xtext.example.dawn.dawn.Call;
 import org.xtext.example.dawn.dawn.Component;
 import org.xtext.example.dawn.dawn.DawnFactory;
 import org.xtext.example.dawn.dawn.DawnPackage;
@@ -121,6 +122,13 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
    * @generated
    */
   private EClass buttonAttributesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass callEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -572,6 +580,36 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCall()
+  {
+    return callEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCall_Name()
+  {
+    return (EAttribute)callEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCall_Action()
+  {
+    return (EAttribute)callEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getTextField()
   {
     return textFieldEClass;
@@ -783,6 +821,10 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
     createEReference(buttonAttributesEClass, BUTTON_ATTRIBUTES__TEXT);
     createEReference(buttonAttributesEClass, BUTTON_ATTRIBUTES__METHOD);
 
+    callEClass = createEClass(CALL);
+    createEAttribute(callEClass, CALL__NAME);
+    createEAttribute(callEClass, CALL__ACTION);
+
     textFieldEClass = createEClass(TEXT_FIELD);
     createEReference(textFieldEClass, TEXT_FIELD__TEXT);
 
@@ -884,7 +926,11 @@ public class DawnPackageImpl extends EPackageImpl implements DawnPackage
 
     initEClass(buttonAttributesEClass, ButtonAttributes.class, "ButtonAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getButtonAttributes_Text(), this.getTextAttribute(), null, "text", null, 0, 1, ButtonAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getButtonAttributes_Method(), this.getWindow(), null, "method", null, 0, 1, ButtonAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getButtonAttributes_Method(), this.getCall(), null, "method", null, 0, 1, ButtonAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCall_Action(), ecorePackage.getEString(), "action", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(textFieldEClass, TextField.class, "TextField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTextField_Text(), this.getTextAttribute(), null, "text", null, 0, 1, TextField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

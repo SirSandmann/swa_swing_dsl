@@ -52,6 +52,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dawn.ecore#//ButtonAttributes/text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dawn.ecore#//ButtonAttributes/method"/>
     </genClasses>
+    <genClasses ecoreClass="Dawn.ecore#//Call">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//Call/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dawn.ecore#//Call/action"/>
+    </genClasses>
     <genClasses ecoreClass="Dawn.ecore#//TextField">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dawn.ecore#//TextField/text"/>
     </genClasses>

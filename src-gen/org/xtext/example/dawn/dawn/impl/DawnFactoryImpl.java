@@ -77,6 +77,7 @@ public class DawnFactoryImpl extends EFactoryImpl implements DawnFactory
       case DawnPackage.POSITION_ATTRIBUTE: return createPositionAttribute();
       case DawnPackage.BUTTON: return createButton();
       case DawnPackage.BUTTON_ATTRIBUTES: return createButtonAttributes();
+      case DawnPackage.CALL: return createCall();
       case DawnPackage.TEXT_FIELD: return createTextField();
       case DawnPackage.TEXT_LABEL: return createTextLabel();
       case DawnPackage.PASSWORD_FIELD: return createPasswordField();
@@ -218,6 +219,17 @@ public class DawnFactoryImpl extends EFactoryImpl implements DawnFactory
   {
     ButtonAttributesImpl buttonAttributes = new ButtonAttributesImpl();
     return buttonAttributes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Call createCall()
+  {
+    CallImpl call = new CallImpl();
+    return call;
   }
 
   /**

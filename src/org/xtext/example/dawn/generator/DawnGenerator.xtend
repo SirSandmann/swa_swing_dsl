@@ -56,6 +56,18 @@ class DawnGenerator extends AbstractGenerator {
 		«IF (e.component instanceof Button)»	
 			JButton «e.component.name» = new JButton("«HelperClassButton.getButtonText(e.component)»");
 			panel.add(«e.component.name»);
+			«IF HelperClassButton.getButtonCall(e.component) != ""»
+			«e.component.name».addActionListener(new ActionListener() { 
+			  public void actionPerformed(ActionEvent e) { 
+			    «IF HelperClassButton.getButtonCall(e.component) == "new_Window"»
+			    
+			    «ENDIF»
+			    «IF HelperClassButton.getButtonCall(e.component) == "Dialog"»
+			    
+			    «ENDIF»
+			  } 
+			} );
+			«ENDIF»
 		«ENDIF»
 		«IF (e.component instanceof TextLabel)»	
 			JLabel «e.component.name» = new JLabel("«HelperClassTextLabel.getTextLabelText(e.component)»");

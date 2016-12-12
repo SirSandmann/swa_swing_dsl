@@ -18,4 +18,9 @@ public class HelperClassButton {
 		return b.getAttributes().getMethod().getName();
 	}
 	
+	public static String getButtonCall(Component c){
+		Button b = (Button)c;
+		return b.getAttributes().getMethod().getAction();
+	}
+	
 }

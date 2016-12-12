@@ -57,8 +57,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="ButtonAttributes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//TextAttribute"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//Window"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//Call"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Call">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextField" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//TextAttribute"

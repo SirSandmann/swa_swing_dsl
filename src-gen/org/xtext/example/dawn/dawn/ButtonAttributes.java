@@ -59,12 +59,12 @@ public interface ButtonAttributes extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Method</em>' containment reference.
-   * @see #setMethod(Window)
+   * @see #setMethod(Call)
    * @see org.xtext.example.dawn.dawn.DawnPackage#getButtonAttributes_Method()
    * @model containment="true"
    * @generated
    */
-  Window getMethod();
+  Call getMethod();
 
   /**
    * Sets the value of the '{@link org.xtext.example.dawn.dawn.ButtonAttributes#getMethod <em>Method</em>}' containment reference.
@@ -74,6 +74,6 @@ public interface ButtonAttributes extends EObject
    * @see #getMethod()
    * @generated
    */
-  void setMethod(Window value);
+  void setMethod(Call value);
 
 } // ButtonAttributes

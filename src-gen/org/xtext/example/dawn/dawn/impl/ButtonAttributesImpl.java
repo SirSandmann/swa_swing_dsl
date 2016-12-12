@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.dawn.dawn.ButtonAttributes;
+import org.xtext.example.dawn.dawn.Call;
 import org.xtext.example.dawn.dawn.DawnPackage;
 import org.xtext.example.dawn.dawn.TextAttribute;
-import org.xtext.example.dawn.dawn.Window;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +51,7 @@ public class ButtonAttributesImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected Window method;
+  protected Call method;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,7 +127,7 @@ public class ButtonAttributesImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public Window getMethod()
+  public Call getMethod()
   {
     return method;
   }
@@ -137,9 +137,9 @@ public class ButtonAttributesImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetMethod(Window newMethod, NotificationChain msgs)
+  public NotificationChain basicSetMethod(Call newMethod, NotificationChain msgs)
   {
-    Window oldMethod = method;
+    Call oldMethod = method;
     method = newMethod;
     if (eNotificationRequired())
     {
@@ -154,7 +154,7 @@ public class ButtonAttributesImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMethod(Window newMethod)
+  public void setMethod(Call newMethod)
   {
     if (newMethod != method)
     {
@@ -220,7 +220,7 @@ public class ButtonAttributesImpl extends MinimalEObjectImpl.Container implement
         setText((TextAttribute)newValue);
         return;
       case DawnPackage.BUTTON_ATTRIBUTES__METHOD:
-        setMethod((Window)newValue);
+        setMethod((Call)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,7 +240,7 @@ public class ButtonAttributesImpl extends MinimalEObjectImpl.Container implement
         setText((TextAttribute)null);
         return;
       case DawnPackage.BUTTON_ATTRIBUTES__METHOD:
-        setMethod((Window)null);
+        setMethod((Call)null);
         return;
     }
     super.eUnset(featureID);

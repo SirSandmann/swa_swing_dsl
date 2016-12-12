@@ -136,6 +136,11 @@ public class DawnAdapterFactory extends AdapterFactoryImpl
         return createButtonAttributesAdapter();
       }
       @Override
+      public Adapter caseCall(Call object)
+      {
+        return createCallAdapter();
+      }
+      @Override
       public Adapter caseTextField(TextField object)
       {
         return createTextFieldAdapter();
@@ -363,6 +368,21 @@ public class DawnAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createButtonAttributesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.dawn.dawn.Call <em>Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.dawn.dawn.Call
+   * @generated
+   */
+  public Adapter createCallAdapter()
   {
     return null;
   }

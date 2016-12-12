@@ -493,6 +493,43 @@ public interface DawnPackage extends EPackage
   int BUTTON_ATTRIBUTES_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.dawn.dawn.impl.CallImpl <em>Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.dawn.dawn.impl.CallImpl
+   * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getCall()
+   * @generated
+   */
+  int CALL = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALL__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Action</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALL__ACTION = 1;
+
+  /**
+   * The number of structural features of the '<em>Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALL_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.dawn.dawn.impl.TextFieldImpl <em>Text Field</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -500,7 +537,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getTextField()
    * @generated
    */
-  int TEXT_FIELD = 12;
+  int TEXT_FIELD = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -537,7 +574,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getTextLabel()
    * @generated
    */
-  int TEXT_LABEL = 13;
+  int TEXT_LABEL = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -574,7 +611,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getPasswordField()
    * @generated
    */
-  int PASSWORD_FIELD = 14;
+  int PASSWORD_FIELD = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -611,7 +648,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getSingleChoice()
    * @generated
    */
-  int SINGLE_CHOICE = 15;
+  int SINGLE_CHOICE = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -648,7 +685,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getSingleChoiceAttributes()
    * @generated
    */
-  int SINGLE_CHOICE_ATTRIBUTES = 16;
+  int SINGLE_CHOICE_ATTRIBUTES = 17;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -685,7 +722,7 @@ public interface DawnPackage extends EPackage
    * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getSingleChoiceOptions()
    * @generated
    */
-  int SINGLE_CHOICE_OPTIONS = 17;
+  int SINGLE_CHOICE_OPTIONS = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1076,6 +1113,38 @@ public interface DawnPackage extends EPackage
    * @generated
    */
   EReference getButtonAttributes_Method();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.dawn.dawn.Call <em>Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Call</em>'.
+   * @see org.xtext.example.dawn.dawn.Call
+   * @generated
+   */
+  EClass getCall();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.dawn.dawn.Call#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.dawn.dawn.Call#getName()
+   * @see #getCall()
+   * @generated
+   */
+  EAttribute getCall_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.dawn.dawn.Call#getAction <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Action</em>'.
+   * @see org.xtext.example.dawn.dawn.Call#getAction()
+   * @see #getCall()
+   * @generated
+   */
+  EAttribute getCall_Action();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.dawn.dawn.TextField <em>Text Field</em>}'.
@@ -1543,6 +1612,32 @@ public interface DawnPackage extends EPackage
      * @generated
      */
     EReference BUTTON_ATTRIBUTES__METHOD = eINSTANCE.getButtonAttributes_Method();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.dawn.dawn.impl.CallImpl <em>Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.dawn.dawn.impl.CallImpl
+     * @see org.xtext.example.dawn.dawn.impl.DawnPackageImpl#getCall()
+     * @generated
+     */
+    EClass CALL = eINSTANCE.getCall();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CALL__NAME = eINSTANCE.getCall_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CALL__ACTION = eINSTANCE.getCall_Action();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.dawn.dawn.impl.TextFieldImpl <em>Text Field</em>}' class.

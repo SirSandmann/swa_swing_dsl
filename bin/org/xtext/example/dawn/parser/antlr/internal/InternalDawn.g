@@ -930,6 +930,36 @@ ruleButtonAttributes returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleActionEnum
+entryRuleActionEnum returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getActionEnumRule()); }
+	iv_ruleActionEnum=ruleActionEnum
+	{ $current=$iv_ruleActionEnum.current.getText(); }
+	EOF;
+
+// Rule ActionEnum
+ruleActionEnum returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='new_Window'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getActionEnumAccess().getNew_WindowKeyword_0());
+		}
+		    |
+		kw='Dialog'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getActionEnumAccess().getDialogKeyword_1());
+		}
+	)
+;
+
 // Entry rule entryRuleCall
 entryRuleCall returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getCallRule()); }
@@ -965,6 +995,29 @@ ruleCall returns [EObject current=null]
 						"name",
 						lv_name_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='action'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getCallAccess().getActionKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCallAccess().getActionActionEnumParserRuleCall_3_0());
+				}
+				lv_action_3_0=ruleActionEnum
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCallRule());
+					}
+					set(
+						$current,
+						"action",
+						lv_action_3_0,
+						"org.xtext.example.dawn.Dawn.ActionEnum");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
