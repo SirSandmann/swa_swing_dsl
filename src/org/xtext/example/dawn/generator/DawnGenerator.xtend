@@ -35,7 +35,8 @@ class DawnGenerator extends AbstractGenerator {
 
 	def compile(Window w) '''
 		import javax.swing.*;
-		import java.awt.BorderLayout;
+		import java.awt.*;
+		import java.awt.event.*;
 		public class «w.name» {
 			public static void main(String[] args){
 				JFrame «w.name» = new JFrame("«if(w.attributes.text != ""){w.attributes.text}»");
@@ -60,10 +61,14 @@ class DawnGenerator extends AbstractGenerator {
 			«e.component.name».addActionListener(new ActionListener() { 
 			  public void actionPerformed(ActionEvent e) { 
 			    «IF HelperClassButton.getButtonCall(e.component) == "new_Window"»
-			    
+			    	JFrame «e.component.name»_new_win =  new JFrame();
+			    	«e.component.name»_new_win.setSize(100,100);
+			    	«e.component.name»_new_win.setVisible(true);
 			    «ENDIF»
 			    «IF HelperClassButton.getButtonCall(e.component) == "Dialog"»
-			    
+			    	JFrame «e.component.name»_dia_Win = new JFrame("«e.component.name»");
+			    	JOptionPane.showMessageDialog(«e.component.name»_dia_Win,
+			    	    "Button «e.component.name» pressed!");
 			    «ENDIF»
 			  } 
 			} );
